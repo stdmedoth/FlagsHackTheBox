@@ -1,0 +1,73 @@
+Starting Nmap 7.91 ( https://nmap.org ) at 2021-06-26 19:05 -03
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Nmap scan report for 10.10.10.242
+Host is up (0.17s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.2 (Ubuntu Linux; protocol 2.0)
+| vulners: 
+|   cpe:/a:openbsd:openssh:8.2p1: 
+|     	EDB-ID:21018	10.0	https://vulners.com/exploitdb/EDB-ID:21018	*EXPLOIT*
+|     	CVE-2001-0554	10.0	https://vulners.com/cve/CVE-2001-0554
+|     	CVE-2020-15778	6.8	https://vulners.com/cve/CVE-2020-15778
+|     	CVE-2020-12062	5.0	https://vulners.com/cve/CVE-2020-12062
+|     	MSF:ILITIES/GENTOO-LINUX-CVE-2021-28041/	4.6	https://vulners.com/metasploit/MSF:ILITIES/GENTOO-LINUX-CVE-2021-28041/	*EXPLOIT*
+|     	CVE-2021-28041	4.6	https://vulners.com/cve/CVE-2021-28041
+|     	MSF:ILITIES/OPENBSD-OPENSSH-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/OPENBSD-OPENSSH-CVE-2020-14145/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP9-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP9-CVE-2020-14145/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-14145/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP5-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP5-CVE-2020-14145/	*EXPLOIT*
+|     	MSF:ILITIES/F5-BIG-IP-CVE-2020-14145/	4.3	https://vulners.com/metasploit/MSF:ILITIES/F5-BIG-IP-CVE-2020-14145/	*EXPLOIT*
+|     	CVE-2020-14145	4.3	https://vulners.com/cve/CVE-2020-14145
+|_    	CVE-2007-2768	4.3	https://vulners.com/cve/CVE-2007-2768
+80/tcp open  http    Apache httpd 2.4.41 ((Ubuntu))
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|_  /icons/: Potentially interesting folder
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.41: 
+|     	MSF:ILITIES/UBUNTU-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/UBUNTU-CVE-2020-11984/	*EXPLOIT*
+|     	MSF:ILITIES/REDHAT_LINUX-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/REDHAT_LINUX-CVE-2020-11984/	*EXPLOIT*
+|     	MSF:ILITIES/ORACLE_LINUX-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/ORACLE_LINUX-CVE-2020-11984/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11984/	*EXPLOIT*
+|     	MSF:ILITIES/FREEBSD-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/FREEBSD-CVE-2020-11984/	*EXPLOIT*
+|     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-11984/	7.5	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-11984/	*EXPLOIT*
+|     	CVE-2021-26691	7.5	https://vulners.com/cve/CVE-2021-26691
+|     	CVE-2020-11984	7.5	https://vulners.com/cve/CVE-2020-11984
+|     	CVE-2020-35452	6.8	https://vulners.com/cve/CVE-2020-35452
+|     	CVE-2020-1927	5.8	https://vulners.com/cve/CVE-2020-1927
+|     	MSF:ILITIES/REDHAT_LINUX-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/REDHAT_LINUX-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/ORACLE_LINUX-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/ORACLE_LINUX-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/ORACLE-SOLARIS-CVE-2020-1934/	5.0	https://vulners.com/metasploit/MSF:ILITIES/ORACLE-SOLARIS-CVE-2020-1934/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP9-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP9-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/FREEBSD-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/FREEBSD-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/CENTOS_LINUX-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/CENTOS_LINUX-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-9490/	*EXPLOIT*
+|     	MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-9490/	5.0	https://vulners.com/metasploit/MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-9490/	*EXPLOIT*
+|     	CVE-2021-30641	5.0	https://vulners.com/cve/CVE-2021-30641
+|     	CVE-2021-26690	5.0	https://vulners.com/cve/CVE-2021-26690
+|     	CVE-2020-9490	5.0	https://vulners.com/cve/CVE-2020-9490
+|     	CVE-2020-1934	5.0	https://vulners.com/cve/CVE-2020-1934
+|     	CVE-2020-13950	5.0	https://vulners.com/cve/CVE-2020-13950
+|     	CVE-2019-17567	5.0	https://vulners.com/cve/CVE-2019-17567
+|     	MSF:ILITIES/REDHAT_LINUX-CVE-2020-11993/	4.3	https://vulners.com/metasploit/MSF:ILITIES/REDHAT_LINUX-CVE-2020-11993/	*EXPLOIT*
+|     	MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11993/	4.3	https://vulners.com/metasploit/MSF:ILITIES/HUAWEI-EULEROS-2_0_SP8-CVE-2020-11993/	*EXPLOIT*
+|     	MSF:ILITIES/CENTOS_LINUX-CVE-2020-11993/	4.3	https://vulners.com/metasploit/MSF:ILITIES/CENTOS_LINUX-CVE-2020-11993/	*EXPLOIT*
+|     	MSF:ILITIES/APACHE-HTTPD-CVE-2020-11993/	4.3	https://vulners.com/metasploit/MSF:ILITIES/APACHE-HTTPD-CVE-2020-11993/	*EXPLOIT*
+|     	MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-11993/	4.3	https://vulners.com/metasploit/MSF:ILITIES/AMAZON-LINUX-AMI-2-CVE-2020-11993/	*EXPLOIT*
+|     	CVE-2020-11993	4.3	https://vulners.com/cve/CVE-2020-11993
+|_    	CVE-2020-13938	2.1	https://vulners.com/cve/CVE-2020-13938
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 90.10 seconds
