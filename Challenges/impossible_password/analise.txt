@@ -1,0 +1,8 @@
+use strings e encontrei a primeira chave do desafio
+SuperSeKretKey
+
+
+usei o radare2 para analisar o binario em hexa
+na posição 0x00400966 existe uma comparação referente ao resultado de strcmp();
+na posição 0x00400968 havia um jne 0x400976 que fecha o programa (em caso de as strings não serem iguais)
+coloquei um nop com 'wa nop' em 0x400976 para evitar o redirecionamento
