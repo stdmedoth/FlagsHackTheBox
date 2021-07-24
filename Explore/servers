@@ -1,0 +1,23 @@
+Nmap scan report for 10.10.10.247
+Host is up (0.14s latency).
+
+PORT      STATE  SERVICE VERSION
+2222/tcp  open   ssh     (protocol 2.0)
+| fingerprint-strings: 
+|   NULL: 
+|_    SSH-2.0-SSH Server - Banana Studio
+| ssh-hostkey: 
+|_  2048 71:90:e3:a7:c9:5d:83:66:34:88:3d:eb:b4:c7:88:fb (RSA)
+42129/tcp closed unknown
+42135/tcp open   http    ES File Explorer Name Response httpd
+|_http-title: Site doesn't have a title (text/html).
+59777/tcp open   http    Bukkit JSONAPI httpd for Minecraft game server 3.6.0 or older
+|_http-title: Site doesn't have a title (text/plain).
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port2222-TCP:V=7.91%I=7%D=7/24%Time=60FC858A%P=x86_64-unknown-linux-gnu
+SF:%r(NULL,24,"SSH-2\.0-SSH\x20Server\x20-\x20Banana\x20Studio\r\n");
+Service Info: Device: phone
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 12.10 seconds
+
