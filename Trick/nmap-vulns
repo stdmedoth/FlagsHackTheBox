@@ -1,0 +1,47 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2022-06-30 10:39 -03
+Pre-scan script results:
+| broadcast-avahi-dos: 
+|   Discovered hosts:
+|     224.0.0.251
+|   After NULL UDP avahi packet DoS (CVE-2011-1002).
+|_  Hosts are all up (not vulnerable).
+Stats: 0:02:22 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan
+NSE Timing: About 98.95% done; ETC: 10:42 (0:00:01 remaining)
+Nmap scan report for 10.10.11.166
+Host is up (0.15s latency).
+Not shown: 995 closed ports
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+25/tcp    open     smtp
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| smtp-vuln-cve2010-4344: 
+|_  The SMTP server is not Exim: NOT VULNERABLE
+|_sslv2-drown: 
+53/tcp    open     domain
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+80/tcp    open     http
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-fileupload-exploiter: 
+|   
+|_    Couldn't find a file-type field.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://seclists.org/fulldisclosure/2011/Aug/175
+|       https://www.securityfocus.com/bid/49303
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_      https://www.tenable.com/plugins/nessus/55976
+44442/tcp filtered coldfusion-auth
+
+Nmap done: 1 IP address (1 host up) scanned in 427.85 seconds
+

@@ -1,0 +1,7 @@
+Not shown: 996 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+25/tcp open  smtp
+53/tcp open  domain
+80/tcp open  http
+
