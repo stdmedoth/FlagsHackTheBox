@@ -1,0 +1,15 @@
+Primeiramente rodei o nmap na maquina descobri que havia um servidor web rodando com o dominio soccer.htb
+Inseri o dominio soccer.htb no /etc/hosts
+acessei esse dominio pela web e fiz um bruteforce de diretorios, pelo qual encontrei um gerenciador de arquivos vulneravel (Tiny ver. 2.4.3)
+Usei um exploit para conseguir logar no tiny, onde pude fazer upload de um shell.
+Acessei o servidor pela shell com usuario www-data.
+Encontrei o arquivo com a chave, mas estava em um arquivo com permissao de leitura apenas para o usuario player ou root
+Rodei o script linpeas.sh para encontrar informaçoes, e encontrei um servidor em outro dominio da maquina.
+Inseri o dominio soc-player.soccer.htb no /etc/hosts
+Acessei esse dominio pela web, e vi que era o mesmo site porem com novas funcionalidades e rodando em produçao
+criei um conta e loguei no site. 
+Dentro do site havia um formulario utilizando sockets para buscar dados para o site.
+Usei um script em python para criar uma api http para o servico ws.
+com essa api http consegui usar o sqlmap para descobrir vulnerabilidades de sql inject.
+O sqlmap me deu o usuario e senha do player da plataforma.
+Testei o usuario e senha para o acesso ssh e consegui.
