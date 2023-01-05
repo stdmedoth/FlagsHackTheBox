@@ -1,0 +1,259 @@
+╔══════════╣ Sudo version
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-version                                                                                       
+Sudo version 1.8.31                                                                                                                                                   
+
+╔══════════╣ CVEs Check
+Vulnerable to CVE-2021-3560                                                                                                                                           
+
+Potentially Vulnerable to CVE-2022-2588
+
+
+
+╔══════════╣ Executing Linux Exploit Suggester
+╚ https://github.com/mzet-/linux-exploit-suggester                                                                                                                    
+cat: write error: Broken pipe                                                                                                                                         
+cat: write error: Broken pipe
+[+] [CVE-2022-2586] nft_object UAF
+
+   Details: https://www.openwall.com/lists/oss-security/2022/08/29/5
+   Exposure: probable
+   Tags: [ ubuntu=(20.04) ]{kernel:5.12.13}
+   Download URL: https://www.openwall.com/lists/oss-security/2022/08/29/5/1
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2021-4034] PwnKit
+
+   Details: https://www.qualys.com/2022/01/25/cve-2021-4034/pwnkit.txt
+   Exposure: probable
+   Tags: [ ubuntu=10|11|12|13|14|15|16|17|18|19|20|21 ],debian=7|8|9|10|11,fedora,manjaro
+   Download URL: https://codeload.github.com/berdav/CVE-2021-4034/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: probable
+   Tags: mint=19,[ ubuntu=18|20 ], debian=10
+   Download URL: https://codeload.github.com/blasty/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-3156] sudo Baron Samedit 2
+
+   Details: https://www.qualys.com/2021/01/26/cve-2021-3156/baron-samedit-heap-based-overflow-sudo.txt
+   Exposure: probable
+   Tags: centos=6|7|8,[ ubuntu=14|16|17|18|19|20 ], debian=9|10
+   Download URL: https://codeload.github.com/worawit/CVE-2021-3156/zip/main
+
+[+] [CVE-2021-22555] Netfilter heap out-of-bounds write
+
+   Details: https://google.github.io/security-research/pocs/linux/cve-2021-22555/writeup.html
+   Exposure: probable
+   Tags: [ ubuntu=20.04 ]{kernel:5.8.0-*}
+   Download URL: https://raw.githubusercontent.com/google/security-research/master/pocs/linux/cve-2021-22555/exploit.c
+   ext-url: https://raw.githubusercontent.com/bcoles/kernel-exploits/master/CVE-2021-22555/exploit.c
+   Comments: ip_tables kernel module must be loaded
+
+[+] [CVE-2022-32250] nft_object UAF (NFT_MSG_NEWSET)
+
+   Details: https://research.nccgroup.com/2022/09/01/settlers-of-netlink-exploiting-a-limited-uaf-in-nf_tables-cve-2022-32250/
+https://blog.theori.io/research/CVE-2022-32250-linux-kernel-lpe-2022/
+   Exposure: less probable
+   Tags: ubuntu=(22.04){kernel:5.15.0-27-generic}
+   Download URL: https://raw.githubusercontent.com/theori-io/CVE-2022-32250-exploit/main/exp.c
+   Comments: kernel.unprivileged_userns_clone=1 required (to obtain CAP_NET_ADMIN)
+
+[+] [CVE-2017-5618] setuid screen v4.5.0 LPE
+
+   Details: https://seclists.org/oss-sec/2017/q1/184
+   Exposure: less probable
+   Download URL: https://www.exploit-db.com/download/https://www.exploit-db.com/exploits/41154
+
+
+
+═══════════════════════════════╣ Interesting Files ╠═══════════════════════════════                                                                                   
+                               ╚═══════════════════╝                                                                                                                  
+╔══════════╣ SUID - Check easy privesc, exploits and write perms
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid                                                                                      
+-rwsr-xr-x 1 root root 42K Nov 17 09:09 /usr/local/bin/doas                                                                                                           
+-rwsr-xr-x 1 root root 140K Nov 28 04:55 /usr/lib/snapd/snap-confine  --->  Ubuntu_snapd<2.37_dirty_sock_Local_Privilege_Escalation(CVE-2019-7304)
+-rwsr-xr-- 1 root messagebus 51K Oct 25 13:09 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+-rwsr-xr-x 1 root root 463K Mar 30  2022 /usr/lib/openssh/ssh-keysign
+-rwsr-xr-x 1 root root 23K Feb 21  2022 /usr/lib/policykit-1/polkit-agent-helper-1
+-rwsr-xr-x 1 root root 15K Jul  8  2019 /usr/lib/eject/dmcrypt-get-device
+-rwsr-xr-x 1 root root 39K Feb  7  2022 /usr/bin/umount  --->  BSD/Linux(08-1996)
+-rwsr-xr-x 1 root root 39K Mar  7  2020 /usr/bin/fusermount
+-rwsr-xr-x 1 root root 55K Feb  7  2022 /usr/bin/mount  --->  Apple_Mac_OSX(Lion)_Kernel_xnu-1699.32.7_except_xnu-1699.24.8
+-rwsr-xr-x 1 root root 67K Feb  7  2022 /usr/bin/su
+-rwsr-xr-x 1 root root 44K Nov 29 11:53 /usr/bin/newgrp  --->  HP-UX_10.20
+-rwsr-xr-x 1 root root 84K Nov 29 11:53 /usr/bin/chfn  --->  SuSE_9.3/10
+-rwsr-xr-x 1 root root 163K Jan 19  2021 /usr/bin/sudo  --->  check_if_the_sudo_version_is_vulnerable
+-rwsr-sr-x 1 root root 1.2M Apr 18  2022 /usr/bin/bash
+-rwsr-xr-x 1 root root 67K Nov 29 11:53 /usr/bin/passwd  --->  Apple_Mac_OSX(03-2006)/Solaris_8/9(12-2004)/SPARC_8/9/Sun_Solaris_2.3_to_2.5.1(02-1997)
+-rwsr-xr-x 1 root root 87K Nov 29 11:53 /usr/bin/gpasswd
+-rwsr-xr-x 1 root root 52K Nov 29 11:53 /usr/bin/chsh
+-rwsr-sr-x 1 daemon daemon 55K Nov 12  2018 /usr/bin/at  --->  RTru64_UNIX_4.0g(CVE-2002-1614)
+-rwsr-xr-x 1 root root 121K Nov 25 17:29 /snap/snapd/17883/usr/lib/snapd/snap-confine  --->  Ubuntu_snapd<2.37_dirty_sock_Local_Privilege_Escalation(CVE-2019-7304)
+-rwsr-xr-x 1 root root 84K Mar 14  2022 /snap/core20/1695/usr/bin/chfn  --->  SuSE_9.3/10
+-rwsr-xr-x 1 root root 52K Mar 14  2022 /snap/core20/1695/usr/bin/chsh
+-rwsr-xr-x 1 root root 87K Mar 14  2022 /snap/core20/1695/usr/bin/gpasswd
+-rwsr-xr-x 1 root root 55K Feb  7  2022 /snap/core20/1695/usr/bin/mount  --->  Apple_Mac_OSX(Lion)_Kernel_xnu-1699.32.7_except_xnu-1699.24.8
+-rwsr-xr-x 1 root root 44K Mar 14  2022 /snap/core20/1695/usr/bin/newgrp  --->  HP-UX_10.20
+-rwsr-xr-x 1 root root 67K Mar 14  2022 /snap/core20/1695/usr/bin/passwd  --->  Apple_Mac_OSX(03-2006)/Solaris_8/9(12-2004)/SPARC_8/9/Sun_Solaris_2.3_to_2.5.1(02-1997)                                                                                                                                                                     
+-rwsr-xr-x 1 root root 67K Feb  7  2022 /snap/core20/1695/usr/bin/su
+-rwsr-xr-x 1 root root 163K Jan 19  2021 /snap/core20/1695/usr/bin/sudo  --->  check_if_the_sudo_version_is_vulnerable
+-rwsr-xr-x 1 root root 39K Feb  7  2022 /snap/core20/1695/usr/bin/umount  --->  BSD/Linux(08-1996)
+-rwsr-xr-- 1 root systemd-resolve 51K Oct 25 13:09 /snap/core20/1695/usr/lib/dbus-1.0/dbus-daemon-launch-helper
+-rwsr-xr-x 1 root root 463K Mar 30  2022 /snap/core20/1695/usr/lib/openssh/ssh-keysign
+
+╔══════════╣ SGID
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid                                                                                      
+-rwxr-sr-x 1 root utmp 15K Sep 30  2019 /usr/lib/x86_64-linux-gnu/utempter/utempter                                                                                   
+-rwxr-sr-x 1 root shadow 31K Nov 29 11:53 /usr/bin/expiry
+-rwxr-sr-x 1 root crontab 43K Feb 13  2020 /usr/bin/crontab
+-rwxr-sr-x 1 root tty 15K Mar 30  2020 /usr/bin/bsd-write
+-rwxr-sr-x 1 root ssh 343K Mar 30  2022 /usr/bin/ssh-agent
+-rwxr-sr-x 1 root shadow 83K Nov 29 11:53 /usr/bin/chage
+-rwsr-sr-x 1 root root 1.2M Apr 18  2022 /usr/bin/bash
+-rwxr-sr-x 1 root tty 35K Feb  7  2022 /usr/bin/wall
+-rwsr-sr-x 1 daemon daemon 55K Nov 12  2018 /usr/bin/at  --->  RTru64_UNIX_4.0g(CVE-2002-1614)
+
+
+
+
+
+╔══════════╣ Searching uncommon passwd files (splunk)
+passwd file: /etc/pam.d/passwd                                                                                                                                        
+passwd file: /etc/passwd
+passwd file: /snap/core20/1695/etc/pam.d/passwd
+passwd file: /snap/core20/1695/etc/passwd
+passwd file: /snap/core20/1695/usr/share/bash-completion/completions/passwd
+passwd file: /snap/core20/1695/usr/share/lintian/overrides/passwd
+passwd file: /snap/core20/1695/var/lib/extrausers/passwd
+passwd file: /usr/share/bash-completion/completions/passwd
+passwd file: /usr/share/lintian/overrides/passwd
+
+
+host 
+soc-player.soccer.htb
+
+╣ Seccomp enabled? ............... disabled 
+
+
+
+╔══════════╣ Unix Sockets Listening
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sockets                                                                                            
+/org/kernel/linux/storage/multipathd                                                                                                                                  
+/root/.pm2/pub.sock
+/root/.pm2/rpc.sock
+/run/dbus/system_bus_socket
+  └─(Read Write)
+/run/irqbalance//irqbalance777.sock
+  └─(Read )
+/run/irqbalance/irqbalance777.sock
+  └─(Read )
+/run/lvm/lvmpolld.socket
+/run/mysqld/mysqld.sock
+  └─(Read Write)
+/run/mysqld/mysqlx.sock
+  └─(Read Write)
+/run/php/php7.4-fpm.sock
+  └─(Read Write)
+/run/snapd-snap.socket
+  └─(Read Write)
+/run/snapd.socket
+  └─(Read Write)
+/run/systemd/fsck.progress
+/run/systemd/journal/dev-log
+  └─(Read Write)
+/run/systemd/journal/io.systemd.journal
+/run/systemd/journal/socket
+  └─(Read Write)
+/run/systemd/journal/stdout
+  └─(Read Write)
+/run/systemd/journal/syslog
+  └─(Read Write)
+/run/systemd/notify
+  └─(Read Write)
+/run/systemd/private
+  └─(Read Write)
+/run/systemd/userdb/io.systemd.DynamicUser
+  └─(Read Write)
+/run/udev/control
+/run/user/1001/bus
+/run/user/1001/gnupg/S.dirmngr
+/run/user/1001/gnupg/S.gpg-agent
+/run/user/1001/gnupg/S.gpg-agent.browser
+/run/user/1001/gnupg/S.gpg-agent.extra
+/run/user/1001/gnupg/S.gpg-agent.ssh
+/run/user/1001/pk-debconf-socket
+/run/user/1001/snapd-session-agent.socket
+/run/user/1001/systemd/private
+/run/uuidd/request
+  └─(Read Write)
+/run/vmware/guestServicePipe
+  └─(Read Write)
+/var/run/mysqld/mysqld.sock
+  └─(Read Write)
+/var/run/mysqld/mysqlx.sock
+  └─(Read Write)
+/var/run/vmware/guestServicePipe
+  └─(Read Write)
+/var/snap/lxd/common/lxd/unix.socket
+
+
+╔══════════╣ Searching tables inside readable .db/.sql/.sqlite files (limit 100)
+Found /var/lib/PackageKit/transactions.db: SQLite 3.x database, last written using SQLite version 3031001                                                             
+Found /var/lib/command-not-found/commands.db: SQLite 3.x database, last written using SQLite version 3031001
+Found /var/lib/fwupd/pending.db: SQLite 3.x database, last written using SQLite version 3031001
+
+
+
+
+╔══════════╣ Unexpected in root
+/data                                                                                                                                                                 
+/vagrant
+
+
+
+╔══════════╣ Analyzing Other Interesting Files (limit 70)
+-rw-r--r-- 1 root root 3771 Feb 25  2020 /etc/skel/.bashrc                                                                                                            
+-rw-r--r-- 1 player player 3771 Feb 25  2020 /home/player/.bashrc
+-rw-r--r-- 1 root root 3771 Feb 25  2020 /snap/core20/1695/etc/skel/.bashrc
+
+
+
+
+
+-rw-r--r-- 1 root root 807 Feb 25  2020 /etc/skel/.profile
+-rw-r--r-- 1 player player 807 Feb 25  2020 /home/player/.profile
+-rw-r--r-- 1 root root 807 Feb 25  2020 /snap/core20/1695/etc/skel/.profile
+
+
+
+
+╔══════════╣ Analyzing Interesting logs Files (limit 70)
+-rw-r----- 1 www-data adm 168686679 Dec 31 19:30 /var/log/nginx/access.log                                                                                            
+
+-rw-r--r-- 1 root root 989554 Dec 31 19:26 /var/log/nginx/error.log
+
+
+
+╔══════════╣ Analyzing FTP Files (limit 70)
+                                                                                                                                                                      
+
+-rw-r--r-- 1 root root 69 Nov  2 09:53 /etc/php/7.4/mods-available/ftp.ini
+-rw-r--r-- 1 root root 69 Nov  2 09:53 /usr/share/php7.4-common/common/ftp.ini
+
+
+
+
+
+╔══════════╣ Searching uncommon passwd files (splunk)
+passwd file: /etc/pam.d/passwd                                                                                                                                        
+passwd file: /etc/passwd
+passwd file: /snap/core20/1695/etc/pam.d/passwd
+passwd file: /snap/core20/1695/etc/passwd
+passwd file: /snap/core20/1695/usr/share/bash-completion/completions/passwd
+passwd file: /snap/core20/1695/usr/share/lintian/overrides/passwd
+passwd file: /snap/core20/1695/var/lib/extrausers/passwd
+passwd file: /usr/share/bash-completion/completions/passwd
+passwd file: /usr/share/lintian/overrides/passwd
+

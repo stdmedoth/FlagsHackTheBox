@@ -1,0 +1,185 @@
+Nmap scan report for 10.10.11.163
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for 10.10.11.171
+Host is up (0.13s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+8084/tcp  filtered websnp
+9898/tcp  filtered monkeycom
+41511/tcp filtered unknown
+
+Nmap scan report for 10.10.11.176
+Host is up (0.13s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+3000/tcp filtered ppp
+
+Nmap scan report for 10.10.11.177
+Host is up (0.13s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+1863/tcp filtered msnp
+
+Nmap scan report for 10.10.11.178
+Host is up (0.19s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+1110/tcp filtered nfsd-status
+2030/tcp filtered device2
+
+Nmap scan report for 10.10.11.179
+Host is up (0.13s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for 10.10.11.180
+Host is up (0.13s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+2034/tcp filtered scoremgr
+
+Nmap scan report for 10.10.11.181
+Host is up (0.13s latency).
+Not shown: 988 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+53/tcp   open  domain
+80/tcp   open  http
+88/tcp   open  kerberos-sec
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+389/tcp  open  ldap
+445/tcp  open  microsoft-ds
+464/tcp  open  kpasswd5
+593/tcp  open  http-rpc-epmap
+636/tcp  open  ldapssl
+3268/tcp open  globalcatLDAP
+3269/tcp open  globalcatLDAPssl
+
+Nmap scan report for 10.10.11.182
+Host is up (0.14s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+1217/tcp filtered hpss-ndapi
+5987/tcp filtered wbem-rmi
+
+Nmap scan report for 10.10.11.183
+Host is up (0.14s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+3000/tcp open  ppp
+3306/tcp open  mysql
+
+Nmap scan report for 10.10.11.184
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for 10.10.11.185
+Host is up (0.13s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+1027/tcp  filtered IIS
+6112/tcp  filtered dtspc
+11110/tcp filtered sgi-soap
+65389/tcp filtered unknown
+
+Nmap scan report for 10.10.11.186
+Host is up (0.14s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+21/tcp   open  ftp
+22/tcp   open  ssh
+80/tcp   open  http
+8000/tcp open  http-alt
+
+Nmap scan report for 10.10.11.187
+Host is up (0.13s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+53/tcp  open  domain
+80/tcp  open  http
+88/tcp  open  kerberos-sec
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+389/tcp open  ldap
+445/tcp open  microsoft-ds
+464/tcp open  kpasswd5
+593/tcp open  http-rpc-epmap
+636/tcp open  ldapssl
+
+Nmap scan report for 10.10.11.188
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for 10.10.11.189
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for 10.10.11.191
+Host is up (0.13s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+111/tcp  open     rpcbind
+1533/tcp filtered virtual-places
+2049/tcp open     nfs
+5214/tcp filtered unknown
+
+Nmap scan report for 10.10.11.192
+Host is up (0.13s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+666/tcp   filtered doom
+2638/tcp  filtered sybase
+24800/tcp filtered unknown
+
+Nmap scan report for 10.10.11.193
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap scan report for soccer.htb (10.10.11.194)
+Host is up (0.13s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+3168/tcp filtered poweronnud
+9091/tcp open     xmltec-xmlmail
+

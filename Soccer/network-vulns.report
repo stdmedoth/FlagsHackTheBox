@@ -1,0 +1,514 @@
+Not shown: 995 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-passwd: ERROR: Script execution failed (use -d to debug)
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+1580/tcp  filtered tn-tl-r1
+3493/tcp  filtered nut
+40193/tcp filtered unknown
+
+Nmap scan report for 10.10.11.171
+Host is up (0.13s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+9500/tcp filtered ismserver
+
+Nmap scan report for 10.10.11.176
+Host is up (0.13s latency).
+Not shown: 991 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+| http-enum: 
+|_  /robots.txt: Robots file
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-aspnet-debug: 
+|_  status: DEBUG is enabled
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+3000/tcp  filtered ppp
+3261/tcp  filtered winshadow
+3325/tcp  filtered active-net
+3493/tcp  filtered nut
+9594/tcp  filtered msgsys
+27355/tcp filtered unknown
+49157/tcp filtered unknown
+
+Nmap scan report for 10.10.11.177
+Host is up (0.14s latency).
+Not shown: 989 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+79/tcp    filtered finger
+80/tcp    open     http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|_  /dev/: Potentially interesting folder
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-fileupload-exploiter: 
+|   
+|_    Couldn't find a file-type field.
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+81/tcp    filtered hosts2-ns
+84/tcp    filtered ctf
+425/tcp   filtered icad-el
+464/tcp   filtered kpasswd5
+1641/tcp  filtered invision
+1840/tcp  filtered netopia-vo2
+10001/tcp filtered scp-config
+32780/tcp filtered sometimes-rpc23
+
+Nmap scan report for 10.10.11.178
+Host is up (0.14s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| http-fileupload-exploiter: 
+|   
+|_    Couldn't find a file-type field.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-majordomo2-dir-traversal: ERROR: Script execution failed (use -d to debug)
+| http-vuln-cve2010-0738: 
+|_  /jmx-console/: Authentication was not required
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.178
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.11.178:80/login
+|     Form id: username
+|     Form action: /api/login
+|     
+|     Path: http://10.10.11.178:80/register
+|     Form id: inputfirstname
+|     Form action: /api/register
+|     
+|     Path: http://10.10.11.178:80/reset
+|     Form id: inputemail
+|_    Form action: /api/reset
+| http-enum: 
+|   /login/: Login page
+|   /js/: Potentially interesting folder
+|_  /register/: Potentially interesting folder
+
+Nmap scan report for 10.10.11.179
+Host is up (0.13s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+
+Nmap scan report for 10.10.11.180
+Host is up (0.13s latency).
+Not shown: 993 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-passwd: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+880/tcp   filtered unknown
+1059/tcp  filtered nimreg
+2401/tcp  filtered cvspserver
+3005/tcp  filtered deslogin
+16000/tcp filtered fmsas
+
+Nmap scan report for 10.10.11.181
+Host is up (0.15s latency).
+Not shown: 986 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+53/tcp   open     domain
+80/tcp   open     http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+88/tcp   open     kerberos-sec
+135/tcp  open     msrpc
+139/tcp  open     netbios-ssn
+389/tcp  open     ldap
+445/tcp  open     microsoft-ds
+464/tcp  open     kpasswd5
+593/tcp  open     http-rpc-epmap
+636/tcp  open     ldapssl
+3268/tcp open     globalcatLDAP
+3269/tcp open     globalcatLDAPssl
+4449/tcp filtered privatewire
+5961/tcp filtered unknown
+
+Host script results:
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_smb-vuln-ms10-054: false
+
+Nmap scan report for 10.10.11.182
+Host is up (0.13s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT    STATE    SERVICE
+22/tcp  open     ssh
+80/tcp  open     http
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+125/tcp filtered locus-map
+
+Nmap scan report for 10.10.11.183
+Host is up (0.14s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+| http-internal-ip-disclosure: 
+|_  Internal IP Leaked: 127.0.1.1
+| http-enum: 
+|_  /images/: Potentially interesting directory w/ listing on 'apache/2.4.41 (ubuntu)'
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+3000/tcp open  ppp
+3306/tcp open  mysql
+|_rsa-vuln-roca: ERROR: Script execution failed (use -d to debug)
+|_sslv2-drown: ERROR: Script execution failed (use -d to debug)
+|_ssl-dh-params: ERROR: Script execution failed (use -d to debug)
+|_mysql-vuln-cve2012-2122: ERROR: Script execution failed (use -d to debug)
+|_ssl-poodle: ERROR: Script execution failed (use -d to debug)
+|_ssl-heartbleed: ERROR: Script execution failed (use -d to debug)
+|_ssl-ccs-injection: ERROR: Script execution failed (use -d to debug)
+
+Nmap scan report for 10.10.11.184
+Host is up (0.13s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-passwd: ERROR: Script execution failed (use -d to debug)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+1065/tcp  filtered syscomlan
+1247/tcp  filtered visionpyramid
+6502/tcp  filtered netop-rc
+12000/tcp filtered cce4x
+
+Nmap scan report for 10.10.11.185
+Host is up (0.13s latency).
+Not shown: 997 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.tenable.com/plugins/nessus/55976
+|       https://www.securityfocus.com/bid/49303
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_      https://seclists.org/fulldisclosure/2011/Aug/175
+2002/tcp filtered globe
+
+Nmap scan report for 10.10.11.186
+Host is up (0.14s latency).
+Not shown: 995 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+21/tcp   open     ftp
+22/tcp   open     ssh
+80/tcp   open     http
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+683/tcp  filtered corba-iiop
+5730/tcp filtered unieng
+
+Nmap scan report for 10.10.11.187
+Host is up (0.13s latency).
+Not shown: 990 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+53/tcp  open  domain
+80/tcp  open  http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-trace: TRACE is enabled
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.52 (win64) openssl/1.1.1m php/8.1.1'
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /images/: Potentially interesting directory w/ listing on 'apache/2.4.52 (win64) openssl/1.1.1m php/8.1.1'
+|_  /js/: Potentially interesting directory w/ listing on 'apache/2.4.52 (win64) openssl/1.1.1m php/8.1.1'
+88/tcp  open  kerberos-sec
+135/tcp open  msrpc
+139/tcp open  netbios-ssn
+389/tcp open  ldap
+445/tcp open  microsoft-ds
+464/tcp open  kpasswd5
+593/tcp open  http-rpc-epmap
+636/tcp open  ldapssl
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+
+Host script results:
+|_smb-vuln-ms10-054: false
+|_smb-vuln-ms10-061: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+|_samba-vuln-cve-2012-1182: Could not negotiate a connection:SMB: Failed to receive bytes: ERROR
+
+Nmap scan report for 10.10.11.188
+Host is up (0.14s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+| http-internal-ip-disclosure: 
+|_  Internal IP Leaked: 127.0.0.1
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.188
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.11.188:80/
+|     Form id: username
+|_    Form action: /login
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+
+Nmap scan report for 10.10.11.189
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_      http://ha.ckers.org/slowloris/
+
+Nmap scan report for 10.10.11.191
+Host is up (0.13s latency).
+Not shown: 993 closed tcp ports (conn-refused)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+80/tcp   open     http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /css/: Potentially interesting directory w/ listing on 'apache/2.4.41 (ubuntu)'
+|   /images/: Potentially interesting directory w/ listing on 'apache/2.4.41 (ubuntu)'
+|_  /js/: Potentially interesting directory w/ listing on 'apache/2.4.41 (ubuntu)'
+|_http-aspnet-debug: ERROR: Script execution failed (use -d to debug)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+111/tcp  open     rpcbind
+146/tcp  filtered iso-tp0
+1352/tcp filtered lotusnotes
+1501/tcp filtered sas-3
+2049/tcp open     nfs
+
+Nmap scan report for 10.10.11.192
+Host is up (0.13s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+1/tcp     filtered tcpmux
+22/tcp    open     ssh
+80/tcp    open     http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.11.192
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.11.192:80/
+|     Form id: contact
+|     Form action: #
+|     
+|     Path: http://10.10.11.192:80/
+|     Form id: contact
+|     Form action: 
+|     
+|     Path: http://10.10.11.192:80/register
+|     Form id: floatinginput
+|     Form action: /register
+|     
+|     Path: http://10.10.11.192:80/login
+|     Form id: floatinginput
+|_    Form action: /login
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+14238/tcp filtered unknown
+
+Nmap scan report for 10.10.11.193
+Host is up (0.13s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+
+Nmap scan report for soccer.htb (10.10.11.194)
+Host is up (0.13s latency).
+Not shown: 972 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.tenable.com/plugins/nessus/55976
+|       https://www.securityfocus.com/bid/49303
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_      https://seclists.org/fulldisclosure/2011/Aug/175
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+389/tcp   filtered ldap
+465/tcp   filtered smtps
+514/tcp   filtered shell
+873/tcp   filtered rsync
+911/tcp   filtered xact-backup
+1061/tcp  filtered kiosk
+1138/tcp  filtered encrypted_admin
+1185/tcp  filtered catchpole
+2022/tcp  filtered down
+2030/tcp  filtered device2
+2107/tcp  filtered msmq-mgmt
+2492/tcp  filtered groove
+2875/tcp  filtered dxmessagebase2
+4449/tcp  filtered privatewire
+5001/tcp  filtered commplex-link
+5225/tcp  filtered hp-server
+5906/tcp  filtered unknown
+5988/tcp  filtered wbem-http
+8001/tcp  filtered vcom-tunnel
+9050/tcp  filtered tor-socks
+9091/tcp  open     xmltec-xmlmail
+14000/tcp filtered scotty-ft
+27000/tcp filtered flexlm0
+27352/tcp filtered unknown
+49163/tcp filtered unknown
+52869/tcp filtered unknown
+
+Nmap done: 256 IP addresses (20 hosts up) scanned in 1411.89 seconds
+

@@ -1,0 +1,5 @@
+PORT      STATE    SERVICE
+22/tcp    open     ssh
+80/tcp    open     http
+9091/tcp  open     xmltec-xmlmail
+49167/tcp filtered unknown 
