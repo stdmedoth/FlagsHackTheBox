@@ -10,5 +10,12 @@ O arquivo user.txt com a flag estava com permissão de leitura apenas para o usu
 Melhorei minha interface com um meterpreter e rodei o linpeas.sh para ter melhores informações do sistema.
 Encontrei o arquivo /home/ruby/.bundle/config.
 Neste arquivo estava a senha do usuario henry para configuração do bundle ruby.
+user henry
+pass Q3c1AqGHtoI0aXAYFH
 Testei a senha do bundle para ssh com usuario henry e consegui acesso. Com isso peguei o arquivo user.txt com a flag.
-Fim
+
+
+Para pegar o root
+linpeas.sh reportou que era possível utilizar sudo em um arquivo de atualização de pacotes ruby.
+criei um arquivo com payload que encontrei em https://staaldraad.github.io/post/2021-01-09-universal-rce-ruby-yaml-load-updated/
+Rodei a atualização do pacote com payload e consegui inserir comandos com root. Peguei o arquivo root.txt com a flag

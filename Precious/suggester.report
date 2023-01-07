@@ -1,0 +1,5 @@
+[*] 10.10.11.189 - 176 exploit checks are being tried...
+[+] 10.10.11.189 - exploit/linux/local/cve_2022_0847_dirtypipe: The target appears to be vulnerable. Linux kernel version found: 5.10.0
+[+] 10.10.11.189 - exploit/linux/local/cve_2022_0995_watch_queue: The target appears to be vulnerable.
+[+] 10.10.11.189 - exploit/linux/local/netfilter_nft_set_elem_init_privesc: The target appears to be vulnerable.
+

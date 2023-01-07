@@ -1,0 +1,25 @@
+https://security.snyk.io/vuln/SNYK-RUBY-PDFKIT-2869795
+
+Password files
+/tmp/passenger.mZ1ek6y/full_admin_password.txt
+/tmp/passenger.mZ1ek6y/read_only_admin_password.txt
+
+╔══════════╣ CVEs Check
+Potentially Vulnerable to CVE-2022-0847                                                                                                                               
+Potentially Vulnerable to CVE-2022-2588
+
+
+Arquivo de configuração do ruby (Aqui tem a senha user)
+/home/ruby/.bundle/config
+
+
+                                                                                                                                                                      
+╔══════════╣ Checking 'sudo -l', /etc/sudoers, and /etc/sudoers.d
+╚ https://book.hacktricks.xyz/linux-hardening/privilege-escalation#sudo-and-suid                                                                                      
+Matching Defaults entries for henry on precious:                                                                                                                      
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User henry may run the following commands on precious:
+    (root) NOPASSWD: /usr/bin/ruby /opt/update_dependencies.rb
+
+

