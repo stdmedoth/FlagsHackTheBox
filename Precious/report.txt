@@ -1,0 +1,14 @@
+Primeiramente fiz um scaneamento da rede com nmap.
+Encontrei o http na porta 80.
+Vinculei o IP da máquina ao domínio precious.htb
+O site rodando na porta 80 basicamente criava um pdf de uma página web
+Eu inseri uma url de um servidor builtin da minha máquina, e percebi que o site estava retornando o pdf em base64.
+Fiz um decode do pdf, e consegui ver que era utilizado o pdfkit v0.8.6 para gerar o pdf.
+Depois de pesquisar, descobri que essa era uma versão vulnerável a injeção de comandos pela URL.
+Injetei comandos mesclados com a URL do site, a partir disso fiz upload de uma shell (usuario ruby) através da minha máquina.
+O arquivo user.txt com a flag estava com permissão de leitura apenas para o usuario henry e root.
+Melhorei minha interface com um meterpreter e rodei o linpeas.sh para ter melhores informações do sistema.
+Encontrei o arquivo /home/ruby/.bundle/config.
+Neste arquivo estava a senha do usuario henry para configuração do bundle ruby.
+Testei a senha do bundle para ssh com usuario henry e consegui acesso. Com isso peguei o arquivo user.txt com a flag.
+Fim

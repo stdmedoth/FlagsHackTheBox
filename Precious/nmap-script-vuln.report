@@ -1,0 +1,13 @@
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=precious.htb
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://precious.htb:80/
+|     Form id: 
+|_    Form action: /
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+

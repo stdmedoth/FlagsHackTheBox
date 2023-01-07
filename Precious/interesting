@@ -1,0 +1,13 @@
+Password files
+/tmp/passenger.mZ1ek6y/full_admin_password.txt
+/tmp/passenger.mZ1ek6y/read_only_admin_password.txt
+
+╔══════════╣ CVEs Check
+Potentially Vulnerable to CVE-2022-0847                                                                                                                               
+Potentially Vulnerable to CVE-2022-2588
+
+
+Arquivo de configuração do ruby (Aqui tem a senha user)
+/home/ruby/.bundle/config
+
+

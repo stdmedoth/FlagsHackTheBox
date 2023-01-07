@@ -1,0 +1,6 @@
+A aplicação principal é um site que recebe uma URL e converte o site em PDF.
+
+
+Na pagina principal eu recebo uma tela para inserir uma url. O site acessa a pagina, baixa, converte em pdf e me retorna.
+
+
