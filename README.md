@@ -15,6 +15,10 @@ Feel free to explore the reports for insights into my approach, techniques, and 
 - [Bizness](./Bizness/report.txt)
 - [Soccer](./Soccer/report.txt)
 - [Precious](./Precious/report.txt)
+- [Knife](./Knife/report.txt)
+- [Meow](./Meow/report.txt)
+- [Explore](./Explore/report.txt)
+- [Love](./Love/report.txt)
 - ...
 
 ## Disclaimer
