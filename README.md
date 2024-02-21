@@ -12,13 +12,13 @@ Feel free to explore the reports for insights into my approach, techniques, and 
 
 ## Reports
 
-- [Bizness](./Bizness/report.txt)
-- [Soccer](./Soccer/report.txt)
-- [Precious](./Precious/report.txt)
-- [Knife](./Knife/report.txt)
-- [Meow](./Meow/report.txt)
-- [Explore](./Explore/report.txt)
-- [Love](./Love/report.txt)
+- [Bizness](./Bizness/report.md)
+- [Soccer](./Soccer/report.md)
+- [Precious](./Precious/report.md)
+- [Knife](./Knife/report.md)
+- [Meow](./Meow/report.md)
+- [Explore](./Explore/report.md)
+- [Love](./Love/report.md)
 - ...
 
 ## Disclaimer
