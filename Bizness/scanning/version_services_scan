@@ -1,0 +1,17 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2024-02-08 15:40 -03
+Nmap scan report for bizness.htb (10.10.11.252)
+Host is up (0.16s latency).
+Not shown: 992 closed ports
+PORT      STATE    SERVICE        VERSION
+22/tcp    open     ssh            OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+37/tcp    filtered time
+80/tcp    open     http           nginx 1.18.0
+443/tcp   open     ssl/http       nginx 1.18.0
+777/tcp   filtered multiling-http
+3814/tcp  filtered neto-dcs
+9944/tcp  filtered unknown
+41511/tcp open     tcpwrapped
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 43.45 seconds
