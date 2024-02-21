@@ -1,3 +1,24 @@
-# Minhas máquinas conquistadas no HackTheBox
+# HackTheBox Conquered Machines
 
-Todos os desafios concluídos possuem um arquivo relatório.txt, onde explico na forma mais resumida de como encontrei a flag de user/máquina.
+Welcome to my HackTheBox conquests! In this repository, you'll find documentation for the machines I've successfully conquered on HackTheBox.
+
+## Overview
+
+Each completed challenge comes with a detailed report.txt file. This file contains a concise explanation of the methods I employed to discover and capture the user/machine flag.
+
+## Usage
+
+Feel free to explore the reports for insights into my approach, techniques, and solutions. Whether you're a fellow hacker, cybersecurity enthusiast, or just curious about the world of penetration testing, I hope you find the information here valuable.
+
+## Reports
+
+- [Bizness](./Bizness/report.txt)
+- [Soccer](./Soccer/report.txt)
+- [Precious](./Precious/report.txt)
+- ...
+
+## Disclaimer
+
+These conquests are shared for educational purposes and to contribute to the cybersecurity community. Always adhere to ethical hacking guidelines and respect the privacy and security of others.
+
+Happy hacking! 🚀
