@@ -1,0 +1,13 @@
+Starting Nmap 7.80 ( https://nmap.org ) at 2024-04-14 22:40 -03
+Nmap scan report for 10.10.11.253
+Host is up (0.15s latency).
+Not shown: 997 closed ports
+PORT      STATE    SERVICE VERSION
+22/tcp    open     ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.6 (Ubuntu Linux; protocol 2.0)
+80/tcp    open     http    nginx
+|_http-title: Weighted Grade Calculator
+44176/tcp filtered unknown
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 42.13 seconds
