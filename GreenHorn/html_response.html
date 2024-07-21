@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>pluck 4.7.18 - not logged in</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link href="data/styleadmin.css" rel="stylesheet" type="text/css" media="screen" />	<script type="text/javascript" src="data/modules/tinymce/tinymce.min.js"></script>
+			<script type="text/javascript">
+		tinymce.init({
+  			selector: 'textarea:not(.mceNoEditor)',
+			height: 600,
+			menubar:false,
+			language: 'en',
+			setup: function(editor) {
+				editor.addButton('mybutton', {
+					type: 'menubutton',
+					text: 'Pluck Actions',
+					icon: false,
+					menu: [{
+						text: 'insert module',
+						menu: [									{
+										text: 'albums',
+										onclick: function() {
+											editor.insertContent('<div class="module_albums">{pluck show_module(albums)}</div>');
+										},
+
+																	 }, 									{
+										text: 'blog',
+										onclick: function() {
+											editor.insertContent('<div class="module_blog">{pluck show_module(blog)}</div>');
+										},
+
+																	 }, 									{
+										text: 'contactform',
+										onclick: function() {
+											editor.insertContent('<div class="module_contactform">{pluck show_module(contactform)}</div>');
+										},
+
+																	 },  
+						,{}]        
+					}, {
+					text: 'insert image',
+//load images here
+									menu: [
+												{
+
+							text: '.htaccess',
+							onclick: function() {
+								editor.insertContent('<img src="images/.htaccess" alt="" \/>');
+							}
+						},
+					{}]//end load
+}, {
+					text: 'insert page',
+//load pages here
+									menu: [ {
+							text: 'Welcome to GreenHorn !',
+							onclick: function() {
+								editor.insertContent('<a href="?file=welcome-to-greenhorn" title="Welcome to GreenHorn !">Welcome to GreenHorn !<\/a>');
+							}
+						},
+						{
+							text: 'Welcome the new junior !',
+							onclick: function() {
+								editor.insertContent('<a href="?file=welcome-the-new-junior" title="Welcome the new junior !">Welcome the new junior !<\/a>');
+							}
+						},
+						{}]
+//end load
+}, {
+					text: 'insert file',
+//load files here
+									menu: [ {
+							text: '.htaccess',
+							onclick: function() {
+								editor.insertContent('<a href="files/.htaccess" title=".htaccess">.htaccess<\/a>');
+							}
+						},
+						{}]
+//end load
+}]
+});
+},
+plugins: [
+"advlist autolink autosave link image lists charmap print preview hr anchor pagebreak",
+"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+"table contextmenu directionality emoticons template textcolor paste textcolor colorpicker textpattern"
+],
+toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect mybutton",
+toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
+toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl"
+
+});	</script>
+	<link rel="icon" type="image/vnd.microsoft.icon" href="data/image/favicon.ico" />
+<meta name="robots" content="noindex" />
+<script type="text/javascript">
+function refresh() {
+	window.location.reload(false);
+}
+</script>
+</head>
+
+<body>
+<div id="menuheader">
+	<h1>pluck</h1>
+	<ul id="menu2">
+		<li>not logged in</li>
+	</ul>
+</div>
+<div id="content"><div class="notice">You are not logged in! A moment, please...</div><meta http-equiv="refresh" content="3; url=login.php" /><div id="copyright"><a href="http://www.pluck-cms.org" target="_blank">pluck 4.7.18</a> © 2005-2024. pluck is available under the terms of the <a href="http://www.gnu.org/licenses/gpl.html" target="_blank">GNU General Public License</a>.</div>
+</div>
+</body>
+</html>

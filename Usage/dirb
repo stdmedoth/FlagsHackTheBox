@@ -1,0 +1,17 @@
+START_TIME: Sun Jun 30 19:16:49 2024
+URL_BASE: http://usage.htb/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://usage.htb/ ----
++ http://usage.htb/dashboard (CODE:302|SIZE:334)                               
++ http://usage.htb/favicon.ico (CODE:200|SIZE:0)                               
++ http://usage.htb/index.php (CODE:200|SIZE:5181)                              
++ http://usage.htb/login (CODE:200|SIZE:5141)                                  
++ http://usage.htb/logout (CODE:302|SIZE:334)                                  
++ http://usage.htb/registration (CODE:200|SIZE:5112)                           
++ http://usage.htb/robots.txt (CODE:200|SIZE:24)                               
+                                                 
