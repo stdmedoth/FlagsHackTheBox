@@ -12,6 +12,7 @@ Feel free to explore the reports for insights into my approach, techniques, and 
 
 ## Reports
 
+- [PermX](./PermX/report.md)
 - [GreenHorn](./GreenHorn/report.md)
 - [Bizness](./Bizness/report.md)
 - [Soccer](./Soccer/report.md)
