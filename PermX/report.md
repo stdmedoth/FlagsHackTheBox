@@ -43,5 +43,18 @@ I downloaded `chamilo-lms-unauthenticated-big-upload-rce-poc` and received a rev
 
 I found the Chamilo application folder, where there is the configuration file. In this file, I found the username and password for the Chamilo database.
 
+
+```
+// Database connection settings.
+$_configuration['db_host'] = 'localhost';
+$_configuration['db_port'] = '3306';
+$_configuration['main_database'] = 'chamilo';
+$_configuration['db_user'] = 'chamilo';
+$_configuration['db_password'] = '03F6lY3uXAP2bkW8';
+// Enable access to database management for platform admins.
+$_configuration['db_manager_enabled'] = false;
+```
+
+
 I tried the password with user mtz on SSH and BAAAM! The `user.txt` file was in the `/home/mtz` folder.
 
