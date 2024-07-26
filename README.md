@@ -17,16 +17,16 @@ Dive into each writeup to discover the methodologies, tools, and thought process
 
 ## Reports
 
-- [BoardLight](./BoardLight/report.md)
-- [PermX](./PermX/report.md)
-- [GreenHorn](./GreenHorn/report.md)
-- [Bizness](./Bizness/report.md)
-- [Soccer](./Soccer/report.md)
-- [Precious](./Precious/report.md)
-- [Knife](./Knife/report.md)
-- [Meow](./Meow/report.md)
-- [Explore](./Explore/report.md)
-- [Love](./Love/report.md)
+- [BoardLight](./BoardLight/README.md)
+- [PermX](./PermX/README.md)
+- [GreenHorn](./GreenHorn/README.md)
+- [Bizness](./Bizness/README.md)
+- [Soccer](./Soccer/README.md)
+- [Precious](./Precious/README.md)
+- [Knife](./Knife/README.md)
+- [Meow](./Meow/README.md)
+- [Explore](./Explore/README.md)
+- [Love](./Love/README.md)
 - ...
 
 ## Disclaimer
