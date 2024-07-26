@@ -4,7 +4,7 @@ Welcome to my HackTheBox conquests! In this repository, you'll find detailed doc
 
 ## Overview
 
-Each completed challenge comes with a detailed `report.txt` file. This file contains a concise explanation of the methods I employed to discover and capture the user/machine flag. You'll find comprehensive writeups that cover various penetration testing techniques and strategies.
+Each completed challenge comes with a detailed `report.md` file. This file contains a concise explanation of the methods I employed to discover and capture the user/machine flag. You'll find comprehensive writeups that cover various penetration testing techniques and strategies.
 
 ## Usage
 
