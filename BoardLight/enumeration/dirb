@@ -1,0 +1,58 @@
+
+-----------------
+DIRB v2.22    
+By The Dark Raver
+-----------------
+
+START_TIME: Thu Jul 25 19:33:36 2024
+URL_BASE: http://crm.board.htb/
+WORDLIST_FILES: /usr/share/dirb/wordlists/common.txt
+
+-----------------
+
+GENERATED WORDS: 4612                                                          
+
+---- Scanning URL: http://crm.board.htb/ ----
+==> DIRECTORY: http://crm.board.htb/admin/                                     
+==> DIRECTORY: http://crm.board.htb/api/                                       
+==> DIRECTORY: http://crm.board.htb/asset/                                     
+==> DIRECTORY: http://crm.board.htb/bookmarks/                                 
+==> DIRECTORY: http://crm.board.htb/categories/                                
+==> DIRECTORY: http://crm.board.htb/comm/                                      
++ http://crm.board.htb/conf (CODE:403|SIZE:278)                                
+==> DIRECTORY: http://crm.board.htb/contact/                                   
+==> DIRECTORY: http://crm.board.htb/core/                                      
+==> DIRECTORY: http://crm.board.htb/cron/                                      
+==> DIRECTORY: http://crm.board.htb/custom/                                    
+==> DIRECTORY: http://crm.board.htb/dav/                                       
+==> DIRECTORY: http://crm.board.htb/exports/                                   
++ http://crm.board.htb/favicon.ico (CODE:200|SIZE:2238)                        
+==> DIRECTORY: http://crm.board.htb/ftp/                                       
+==> DIRECTORY: http://crm.board.htb/holiday/                                   
+==> DIRECTORY: http://crm.board.htb/imports/                                   
+==> DIRECTORY: http://crm.board.htb/includes/                                  
++ http://crm.board.htb/index.php (CODE:200|SIZE:6360)                          
+==> DIRECTORY: http://crm.board.htb/install/                                   
+==> DIRECTORY: http://crm.board.htb/langs/                                     
+==> DIRECTORY: http://crm.board.htb/paypal/                                    
+==> DIRECTORY: http://crm.board.htb/product/                                   
+==> DIRECTORY: http://crm.board.htb/public/                                    
+==> DIRECTORY: http://crm.board.htb/resource/                                  
++ http://crm.board.htb/robots.txt (CODE:200|SIZE:146)                          
++ http://crm.board.htb/server-status (CODE:403|SIZE:278)                       
+==> DIRECTORY: http://crm.board.htb/support/                                   
+==> DIRECTORY: http://crm.board.htb/theme/                                     
+==> DIRECTORY: http://crm.board.htb/ticket/                                    
+==> DIRECTORY: http://crm.board.htb/user/                                      
+==> DIRECTORY: http://crm.board.htb/webservices/                               
+==> DIRECTORY: http://crm.board.htb/website/                                   
+                                                                               
+---- Entering directory: http://crm.board.htb/admin/ ----
++ http://crm.board.htb/admin/index.php (CODE:200|SIZE:6366)                    
+==> DIRECTORY: http://crm.board.htb/admin/menus/                               
+==> DIRECTORY: http://crm.board.htb/admin/system/                              
+==> DIRECTORY: http://crm.board.htb/admin/tools/                               
+                                                                               
+---- Entering directory: http://crm.board.htb/api/ ----
+==> DIRECTORY: http://crm.board.htb/api/admin/                                 
+==> DIRECTORY: http://crm.board.htb/api/class/

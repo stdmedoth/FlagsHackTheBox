@@ -12,6 +12,7 @@ Feel free to explore the reports for insights into my approach, techniques, and 
 
 ## Reports
 
+- [BoardLight](./BoardLight/report.md)
 - [PermX](./PermX/report.md)
 - [GreenHorn](./GreenHorn/report.md)
 - [Bizness](./Bizness/report.md)
